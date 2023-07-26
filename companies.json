@@ -1,0 +1,85 @@
+{
+    "unternehmen": [
+      {
+        "name": "Saudi Aramco",
+        "co2_ausstoß": "500"
+      },
+      {
+        "name": "Chevron",
+        "co2_ausstoß": "41"
+      },
+      {
+        "name": "ExxonMobil",
+        "co2_ausstoß": "36"
+      },
+      {
+        "name": "BP",
+        "co2_ausstoß": "34"
+      },
+      {
+        "name": "Royal Dutch Shell",
+        "co2_ausstoß": "31"
+      },
+      {
+        "name": "TotalEnergies",
+        "co2_ausstoß": "31"
+      },
+      {
+        "name": "Glencore",
+        "co2_ausstoß": "27"
+      },
+      {
+        "name": "China National Petroleum Corporation (CNPC)",
+        "co2_ausstoß": "23"
+      },
+      {
+        "name": "Gazprom",
+        "co2_ausstoß": "18"
+      },
+      {
+        "name": "ConocoPhillips",
+        "co2_ausstoß": "16"
+      },
+      {
+        "name": "BHP",
+        "co2_ausstoß": "14"
+      },
+      {
+        "name": "Valero Energy",
+        "co2_ausstoß": "13"
+      },
+      {
+        "name": "Rio Tinto",
+        "co2_ausstoß": "12"
+      },
+      {
+        "name": "ArcelorMittal",
+        "co2_ausstoß": "11"
+      },
+      {
+        "name": "Kuwait Petroleum Corporation (KPC)",
+        "co2_ausstoß": "10"
+      },
+      {
+        "name": "PetroChina",
+        "co2_ausstoß": "10"
+      },
+      {
+        "name": "Vale",
+        "co2_ausstoß": "9"
+      },
+      {
+        "name": "Peabody Energy",
+        "co2_ausstoß": "8"
+      },
+      {
+        "name": "Exxaro Resources",
+        "co2_ausstoß": "7"
+      },
+      {
+        "name": "Consol Energy",
+        "co2_ausstoß": "6"
+      }
+    ]
+  }
+  
