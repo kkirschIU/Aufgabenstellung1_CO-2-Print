@@ -12,33 +12,34 @@
   <body>
 
     <div class="container">
-
-        <!--Globale Navigation-->
-        <nav class="d-flex justify-content-end py-3 my-4 border-top">
-            <ul class="nav">
-            <li class="nav-item"><a
-                    href="https://www.twitter.com/globalcarboninsights">Instagram</a></li>
-            <li class="nav-item"><a
-                    href="https://www.instagram.com/globalcarboninsights">Instagram</a></li>
-            <li class="nav-item"><a
-                    href="https://www.facebook.com/globalcarboninsights">Facebook</a></li>
-            </ul>
-        </nav>
-
+        
         <header class="row align-items-center">
-          <div class="col-sm-4">
-            <img src="Logo1.jpg" alt="Logo" class="img-fluid">
-          </div>
-          <div class="col-sm-8">
-            <h1>Global Carbon Insights</h1>
-            <h2>Unsere Mission sind Transparenz und Aufklärung!</h2>
-          </div>
+
+            <!--Globale Navigation-->
+            <nav class="d-flex justify-content-end py-3 my-4 border-top">
+                <ul class="nav">
+                <li class="nav-item"><a
+                        href="https://www.twitter.com/globalcarboninsights">Twitter</a></li>
+                <li class="nav-item"><a
+                        href="https://www.instagram.com/globalcarboninsights">Instagram</a></li>
+                <li class="nav-item"><a
+                        href="https://www.facebook.com/globalcarboninsights">Facebook</a></li>
+                </ul>
+            </nav>
+
+            <div class="col-sm-4">
+                <img src="Logo1.jpg" alt="Logo" class="img-fluid">
+            </div>
+            <div class="col-sm-8">
+                <h1>Global Carbon Insights</h1>
+                <h2>Unsere Mission sind Transparenz und Aufklärung!</h2>
+            </div>
         </header>
 
-      <main>
-        <div id="main nav">
-            <nav>
-                <ul>
+      <main class="d-flex">
+        <div id="menue">
+            <nav class="d-flex flex-shrink-0 p-2" style="width: 150px">
+                <ul class="nav mb-auto">
                 <li><a href="home.html">Homepage</a></li>
                 <li><a href="services.html">Unsere Leistungen</a></li>
                 <li><a href="products.html">Unsere Produkte</a></li>
@@ -47,10 +48,11 @@
                 </ul>
             </nav>
         </div>
-                    
-          <section>
-            <h1>CO2-Fooprint der Länder</h1>
-            <p>
+        
+        <div id="content" class="me-3">
+          <section class="list-group">
+            <h1 class="list-group-item mb-0">CO2-Fooprint der Länder</h1>
+            <p class="list-group-item">
                 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
             </p>
 
@@ -58,14 +60,29 @@
                 <input type="text" class="form-control" name="suche" placeholder="Suche">
             </form>
             
-            <ul id="country-data">
+            <!--<ul id="country-data" class="list-group-item">-->
                 <!-- Hier werden die JSON-Daten angezeigt -->
-              </ul>
+              <!--</ul>-->
+
+              <div class="table-responsive-countries">
+                <table class="table table-bordered table-striped">
+                  <thead>
+                    <tr>
+                      <th>Land</th>
+                      <th>tCO2/Kopf</th>
+                    </tr>
+                  </thead>
+                  <tbody id="country-data">
+                    <!-- Hier werden die JSON-Daten angezeigt -->
+                  </tbody>
+                </table>
+              </div>
+
           </section>
 
-          <section>
-            <h1>CO2-Fooprint der Unternehmen</h1>
-            <p>
+          <section class="list-group">
+            <h1 class="list-group-item mb-0">CO2-Fooprint der Unternehmen</h1>
+            <p class="list-group-item">
                 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
             </p>
 
@@ -73,12 +90,26 @@
                 <input type="text" name="suche" placeholder="Suche">
             </form>
 
-            <ul id="company-data">
+           <!--<ul id="company-data" class="list-group-item">-->
                 <!-- Hier werden die JSON-Daten angezeigt -->
-              </ul>
+              <!--</ul>-->
+
+              <div class="table-responsive-companies">
+                <table class="table table-bordered table-striped">
+                  <thead>
+                    <tr>
+                      <th>Unternehmen</th>
+                      <th>CO2 Ausstoß in Tonnen</th>
+                    </tr>
+                  </thead>
+                  <tbody id="company-data">
+                    <!-- Hier werden die JSON-Daten angezeigt -->
+                  </tbody>
+                </table>
+              </div>
 
           </section>
-
+        </div>  
       </main>
 
       <footer class="d-flex justify-content-end py-3 my-4 border-top">
@@ -280,32 +311,47 @@ const jsonData2 = {
     ]
   };
 
-            // Funktion zum Anzeigen der Länder-Emissions JSON-Daten in HTML
-            function anzeigenDatenCountries() {
-                const liste = document.getElementById('country-data');
+                        // Funktion zum Anzeigen der Länder-Emissions JSON-Daten in HTML        
+                        function anzeigenDatenCountries() {
+                        const tableBody = document.getElementById('country-data');
 
-                jsonData.countries.forEach(country => {
-                     const listItem = document.createElement('li');
-                     listItem.textContent = `${country.Land}: ${country['tCO2/Kopf']} tCO2`;
-                     liste.appendChild(listItem);
-                    });
-                }
+                        jsonData.countries.forEach(country => {
+                            const row = document.createElement('tr');
+                            const landCell = document.createElement('td');
+                            const tco2Cell = document.createElement('td');
 
-            // Funktion zum Anzeigen der Unternehmens-Emissions JSON-Daten in HTML
-            function anzeigenDatenCompanies() {
-                 const liste = document.getElementById('company-data');
-                 jsonData2.companies.forEach(companies => {
-                     const listItem = document.createElement('li');
-                     listItem.textContent = `${companies.name}: ${companies['co2_ausstoß']} co2_ausstoß`;
-                     liste.appendChild(listItem);
-                    });
-                }
+                            landCell.textContent = country.Land;
+                            tco2Cell.textContent = country['tCO2/Kopf'];
 
-                    // JSON-Daten anzeigen, wenn die Seite geladen ist
-                    window.onload = function() {
-                        anzeigenDatenCountries();
-                        anzeigenDatenCompanies();
-                    };        
+                            row.appendChild(landCell);
+                            row.appendChild(tco2Cell);
+
+                            tableBody.appendChild(row);
+                        });
+                    }
+                        // Funktion zum Anzeigen der Unternehmens-Emissions JSON-Daten in HTML
+                        function anzeigenDatenCompanies() {
+                        const tableBody = document.getElementById('company-data');
+
+                        jsonData2.companies.forEach(companies => {
+                            const row = document.createElement('tr');
+                            const nameCell = document.createElement('td');
+                            const co2_ausstoßCell = document.createElement('td');
+
+                            nameCell.textContent = companies.name;
+                            co2_ausstoßCell.textContent = companies['co2_ausstoß'];
+
+                            row.appendChild(nameCell);
+                            row.appendChild(co2_ausstoßCell);
+
+                            tableBody.appendChild(row);
+                        });
+}
+
+                window.onload = function() {
+                                        anzeigenDatenCountries();
+                                        anzeigenDatenCompanies();
+                };
         </script>
 
     
