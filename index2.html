@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" dir="auto"> <!--dir="auto" fuer rtl anpassung-->
   <head>
     <title>Global Carbon Insights</title>
     
@@ -7,6 +7,13 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2/dist/css/bootstrap.min.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!--Platzhalter für media query für responsive design (Kapitel 4)-->
+
+        <style>
+          /* Stile für die Menüplatzierung bei rtl-Sprachen */
+          .navbar-rtl {
+            justify-content: flex-end;
+          }
+        </style>
   </head>
 
   <body>
@@ -14,7 +21,6 @@
     <div class="container">
         
         <header class="row align-items-center">
-
             <!--Globale Navigation-->
             <nav class="d-flex justify-content-end py-3 my-4 border-top">
                 <ul class="nav">
@@ -31,71 +37,165 @@
                 <img src="Logo1.jpg" alt="Logo" class="img-fluid">
             </div>
             <div class="col-sm-8">
-                <h1>Global Carbon Insights</h1>
+                <h1 dir="auto">العنوان الأول</h1>
+                <h1 dir="auto">Global Carbon Insights</h1>
                 <h2>Unsere Mission sind Transparenz und Aufklärung!</h2>
             </div>
         </header>
 
+
+      <!--Menue der internen Links zur Navigation auf der Webseite-->
       <main class="d-flex">
-        <div id="menue">
-            <nav class="d-flex flex-shrink-0 p-2" style="width: 150px">
+        <div class="d-flex justify-content-end flex-row-reverse" id="menue">
+            <!--<nav class="d-flex flex-shrink-0 p-2" style="width: 180px">
                 <ul class="nav mb-auto">
-                <li><a href="home.html">Homepage</a></li>
-                <li><a href="services.html">Unsere Leistungen</a></li>
-                <li><a href="products.html">Unsere Produkte</a></li>
-                <li><a href="prices.html">Unsere Preise</a></li>
-                <li><a href="about.html">Über uns</a></li>
+                  <li><a href="#about-section">Über uns</a></li>
+                  <li><a href="#countries_CO2">CO2 der Länder</a></li>
+                  <li><a href="#companies_CO2">CO2 der Unternehmen</a></li>
                 </ul>
             </nav>
-        </div>
+        </div>-->
         
-        <div id="content" class="me-3">
-          <section class="list-group">
-            <h1 class="list-group-item mb-0">CO2-Fooprint der Länder</h1>
-            <p class="list-group-item">
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <!-- Hier dein Menü-HTML einfügen -->
+          <ul class="nav mb-auto">
+            <li><a href="#about-section">Über uns</a></li>
+            <li><a href="#countries_CO2">CO2 der Länder</a></li>
+            <li><a href="#companies_CO2">CO2 der Unternehmen</a></li>
+          </ul>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <a class="nav-link" href="#about-section">Über uns</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#countries_CO2">CO2 der Länder</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#companies_CO2">CO2 der Unternehmen</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+                
+        
+        <div class="col-md-9"> 
+          <!-- Section - Über uns -->    
+          <div class="list-group mb-4">
+            <section id="about-section" class="list-group-item">
+            <h1>Über uns - Global Carbon Insights</h1>
+            <p>
+              Herzlich willkommen bei Global Carbon Insights! Wir sind ein engagiertes Non-Profit-Unternehmen, das sich leidenschaftlich dem Kampf gegen den Klimawandel verschrieben hat. Unsere Mission ist es, das Bewusstsein für die drängenden Herausforderungen des Klimawandels zu schärfen und die Öffentlichkeit über die CO2-Emissionen von Ländern und Unternehmen weltweit aufzuklären.
+            </p>
+          
+            <h2>Unsere Geschichte</h2>
+            <p>
+              Global Carbon Insights wurde ursprünglich von einer Gruppe von begeisterten Umweltschützern und Forschern ins Leben gerufen, die eine gemeinsame Vision teilten: Eine Welt zu schaffen, in der alle Menschen über die Auswirkungen ihrer Handlungen auf den Planeten informiert sind. Unsere Gründer waren zutiefst besorgt über die zunehmenden Naturkatastrophen und Extremwetterereignisse, die durch den Klimawandel verursacht wurden, und sie erkannten die dringende Notwendigkeit, Maßnahmen zu ergreifen.
+            </p>
+          
+            <h2>Unsere Motivation</h2>
+            <p>
+              Unsere Motivation entstammt der Überzeugung, dass Wissen und Transparenz der Schlüssel zur Veränderung sind. Indem wir verlässliche Daten über die CO2-Emissionen von Ländern und Unternehmen zugänglich machen, ermöglichen wir es der Weltgemeinschaft, informierte Entscheidungen zu treffen und gezielte Schritte zur Reduzierung ihres ökologischen Fußabdrucks zu unternehmen.
+            </p>
+            <p>
+              Der Klimawandel hat bereits dramatische Auswirkungen auf unseren Planeten, von schmelzenden Gletschern bis hin zu verheerenden Naturkatastrophen wie Stürmen, Dürren und Überschwemmungen. Wir sehen die Verbindung zwischen dem Klimawandel und diesen Naturkatastrophen als Weckruf für dringende Maßnahmen. Durch Aufklärung und Sensibilisierung möchten wir die Menschen dazu inspirieren, gemeinsam für eine nachhaltige Zukunft einzutreten.
+            </p>
+          
+            <h2>Unser Ziel</h2>
+            <p>
+              Unser Ziel ist es, jedem Bürger einen klaren Überblick über die CO2-Emissionen von Ländern und Unternehmen zu geben, damit sie die Auswirkungen auf unser Klima besser verstehen können. Wir glauben, dass Wissen die Grundlage für kollektive Veränderung ist. Indem wir aufklären und informieren, hoffen wir, dass Menschen und Regierungen auf der ganzen Welt Maßnahmen ergreifen, um den Klimawandel zu bekämpfen und eine lebenswerte Umwelt für zukünftige Generationen zu bewahren.
+            </p>
+            <p>
+              Wir sind fest davon überzeugt, dass jeder Einzelne einen wertvollen Beitrag zum Klimaschutz leisten kann. Gemeinsam können wir den Klimawandel bekämpfen und eine nachhaltige, blühende Zukunft für unseren wunderbaren Planeten gestalten.
+            </p>
+          
+            <h2>Vielen Dank, dass Sie uns auf dieser wichtigen Reise begleiten!</h2>
+            <p></p>
+            <h1>Gemeinsam für den Planeten. Gemeinsam für eine nachhaltige Zukunft.</h1>
+            <section>
+         </div>
+          
+     
+        <!-- Section - CO2-Footprint der Laender -->
+        <div class="list-group mb-4"> 
+          <section id="countries_CO2" class="list-group-item">
+            <h1>CO2-Fooprint der Länder</h1>
+            <p>
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
             </p>
 
-            <form>
-                <input type="text" class="form-control" name="suche" placeholder="Suche">
-            </form>
-            
-            <!--<ul id="country-data" class="list-group-item">-->
-                <!-- Hier werden die JSON-Daten angezeigt -->
-              <!--</ul>-->
-
-              <div class="table-responsive-countries">
-                <table class="table table-bordered table-striped">
+            <div class="row mt-3">
+              <div class="col-md-6 mb-3">
+                  <!-- Suchfeld zum Filtern nach einzelnen Ländern -->
+                  <form>
+                      <input type="text" class="form-control" name="suche" id="search-country" placeholder="Suche nach Land" oninput="filterByCountry(this.value)">
+                  </form>
+              </div>
+          
+              <div class="col-md-6">
+                  <!-- Drop-Down-Menü zum Filtern der Länder nach Alphabet, nach CO2-Ausstoß aufsteigend oder absteigend -->
+                  <form class="form-inline">
+                      <select id="sortOption" class="form-select" onchange="sortTable()">
+                          <option value="default">Sortieren nach:</option>
+                          <option value="alphabetical">Land (alphabetisch)</option>
+                          <option value="emissions_asc">CO²-Emissionen (aufsteigend)</option>
+                          <option value="emissions_desc">CO²-Emissionen (absteigend)</option>
+                      </select>
+                  </form>
+              </div>
+          
+          
+          <div class="table-responsive-countries">
+              <table class="table table-bordered table-striped" id="country-table">
                   <thead>
-                    <tr>
-                      <th>Land</th>
-                      <th>tCO2/Kopf</th>
-                    </tr>
+                      <tr>
+                          <th>Land</th>
+                          <th>tCO2/Kopf</th>
+                      </tr>
                   </thead>
                   <tbody id="country-data">
-                    <!-- Hier werden die JSON-Daten angezeigt -->
+                      <!-- Hier werden die JSON-Daten angezeigt -->
                   </tbody>
-                </table>
-              </div>
-
+              </table>
+          </div>
           </section>
+        </div>
 
-          <section class="list-group">
-            <h1 class="list-group-item mb-0">CO2-Fooprint der Unternehmen</h1>
-            <p class="list-group-item">
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+        <!-- Section - CO2-Footprint der Unternehmen -->
+        <div class="list-group mb-4">
+          <section id="companies_CO2"  class="list-group-item">
+            <h1>CO2-Fooprint der Unternehmen</h1>
+            <p>
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
             </p>
 
+          <div class="row mt-3">
+            <div class="col-md-6 mb-3">
+            <!--Suchfeld zum Filtern nach einzelnen Unternehmen-->
             <form>
-                <input type="text" name="suche" placeholder="Suche">
+              <input type="text" class="form-control" name="suche" id="search-company" placeholder="Suche nach Unternehmen" oninput="filterByCompany(this.value)">
             </form>
+            </div>
 
-           <!--<ul id="company-data" class="list-group-item">-->
-                <!-- Hier werden die JSON-Daten angezeigt -->
-              <!--</ul>-->
+            <div class="col-md-6">
+            <!--Drop-Down Menue zum Filtern der Unternehmen nach Alphabet, nach CO2 Ausstoss aufsteigend oder absteigend-->
+            <form class="form-inline">
+                <select id="sortOptionComp" class="form-select" onchange="sortTableCompany()">
+                <option value="default">Sortieren nach:</option>
+                <option value="alphabetical">Unternehmen (alphabetisch)</option>
+                <option value="emissions_asc">CO²-Emissionen (aufsteigend)</option>
+                <option value="emissions_desc">CO²-Emissionen (absteigend)</option>
+            </select>
+            </form>
+            </div>
+          </div>
 
               <div class="table-responsive-companies">
-                <table class="table table-bordered table-striped">
+                <table class="table table-bordered table-striped" id="company-table">
                   <thead>
                     <tr>
                       <th>Unternehmen</th>
@@ -109,6 +209,7 @@
               </div>
 
           </section>
+        </div> 
         </div>  
       </main>
 
@@ -310,49 +411,194 @@ const jsonData2 = {
       }
     ]
   };
+  
 
-                        // Funktion zum Anzeigen der Länder-Emissions JSON-Daten in HTML        
-                        function anzeigenDatenCountries() {
-                        const tableBody = document.getElementById('country-data');
+  // Funktion zum Anzeigen der Laender-Emissions JSON-Daten in HTML
+  function anzeigenDatenCountries() {
+        const tableBody = document.getElementById('country-data');
 
-                        jsonData.countries.forEach(country => {
-                            const row = document.createElement('tr');
-                            const landCell = document.createElement('td');
-                            const tco2Cell = document.createElement('td');
+        jsonData.countries.forEach(country => {
+          const row = document.createElement('tr');
+          const landCell = document.createElement('td');
+          const tco2Cell = document.createElement('td');
 
-                            landCell.textContent = country.Land;
-                            tco2Cell.textContent = country['tCO2/Kopf'];
+          landCell.textContent = country.Land;
+          tco2Cell.textContent = country['tCO2/Kopf'];
 
-                            row.appendChild(landCell);
-                            row.appendChild(tco2Cell);
+          row.appendChild(landCell);
+          row.appendChild(tco2Cell);
 
-                            tableBody.appendChild(row);
-                        });
-                    }
-                        // Funktion zum Anzeigen der Unternehmens-Emissions JSON-Daten in HTML
-                        function anzeigenDatenCompanies() {
-                        const tableBody = document.getElementById('company-data');
+          tableBody.appendChild(row);
+        });
+      }
 
-                        jsonData2.companies.forEach(companies => {
-                            const row = document.createElement('tr');
-                            const nameCell = document.createElement('td');
-                            const co2_ausstoßCell = document.createElement('td');
+  // Funktion zum Anzeigen der Unternehmens-Emissions JSON-Daten in HTML
+  function anzeigenDatenCompanies() {
+         const tableBody = document.getElementById('company-data');
 
-                            nameCell.textContent = companies.name;
-                            co2_ausstoßCell.textContent = companies['co2_ausstoß'];
+        jsonData2.companies.forEach(companies => {
+          const row = document.createElement('tr');
+          const nameCell = document.createElement('td');
+          const co2_ausstoßCell = document.createElement('td');
 
-                            row.appendChild(nameCell);
-                            row.appendChild(co2_ausstoßCell);
+          nameCell.textContent = companies.name;
+          co2_ausstoßCell.textContent = companies['co2_ausstoß'];
 
-                            tableBody.appendChild(row);
-                        });
-}
+          row.appendChild(nameCell);
+          row.appendChild(co2_ausstoßCell);
 
-                window.onload = function() {
-                                        anzeigenDatenCountries();
-                                        anzeigenDatenCompanies();
-                };
-        </script>
+          tableBody.appendChild(row);
+        });
+      }
 
-    
+      // Die Funktion zum Sortieren der Laendertabelle: Alphabetisch, Aufsteigend, Absteigend
+      function sortTable() {
+        const table = document.getElementById('country-table');
+        const rows = table.getElementsByTagName('tr');
+        const sortOption = document.getElementById('sortOption').value;
+
+        if (sortOption === 'alphabetical') {
+          const sortedRows = Array.from(rows).slice(1).sort((a, b) => {
+            const cellA = a.getElementsByTagName('td')[0].textContent.toLowerCase();
+            const cellB = b.getElementsByTagName('td')[0].textContent.toLowerCase();
+            return cellA.localeCompare(cellB);
+          });
+
+          for (let i = 0; i < sortedRows.length; i++) {
+            table.appendChild(sortedRows[i]);
+          }
+        } else if (sortOption === 'emissions_asc') {
+            const sortedRows = Array.from(rows).slice(1).sort((a, b) => {
+            const cellA = parseFloat(a.getElementsByTagName('td')[1].textContent);
+            const cellB = parseFloat(b.getElementsByTagName('td')[1].textContent);
+            return cellA - cellB;
+          });
+
+          for (let i = 0; i < sortedRows.length; i++) {
+            table.appendChild(sortedRows[i]);
+          };  
+
+        } else if (sortOption === 'emissions_desc') {
+            const sortedRows = Array.from(rows).slice(1).sort((a, b) => {
+            const cellA = parseFloat(a.getElementsByTagName('td')[1].textContent);
+            const cellB = parseFloat(b.getElementsByTagName('td')[1].textContent);
+            return cellB - cellA; // Reihenfolge umgekehrt, um absteigende Sortierung zu erhalten
+          });
+
+          for (let i = 0; i < sortedRows.length; i++) {
+          table.appendChild(sortedRows[i]);
+            };
+        }
+      }
+
+      // Die Funktion zum Sortieren der Unternehmenstabelle: Alphabetisch, Aufsteigend, Absteigend
+      function sortTableCompany() {
+        const table = document.getElementById('company-table');
+        const rows = table.getElementsByTagName('tr');
+        const sortOption = document.getElementById('sortOptionComp').value;
+
+        if (sortOption === 'alphabetical') {
+          const sortedRows = Array.from(rows).slice(1).sort((a, b) => {
+            const cellA = a.getElementsByTagName('td')[0].textContent.toLowerCase();
+            const cellB = b.getElementsByTagName('td')[0].textContent.toLowerCase();
+            return cellA.localeCompare(cellB);
+          });
+
+          for (let i = 0; i < sortedRows.length; i++) {
+            table.appendChild(sortedRows[i]);
+          }
+        } else if (sortOption === 'emissions_asc') {
+            const sortedRows = Array.from(rows).slice(1).sort((a, b) => {
+            const cellA = parseFloat(a.getElementsByTagName('td')[1].textContent);
+            const cellB = parseFloat(b.getElementsByTagName('td')[1].textContent);
+            return cellA - cellB;
+          });
+
+          for (let i = 0; i < sortedRows.length; i++) {
+            table.appendChild(sortedRows[i]);
+          };  
+
+        } else if (sortOption === 'emissions_desc') {
+            const sortedRows = Array.from(rows).slice(1).sort((a, b) => {
+            const cellA = parseFloat(a.getElementsByTagName('td')[1].textContent);
+            const cellB = parseFloat(b.getElementsByTagName('td')[1].textContent);
+            return cellB - cellA; // Reihenfolge umgekehrt, um absteigende Sortierung zu erhalten
+          });
+
+          for (let i = 0; i < sortedRows.length; i++) {
+          table.appendChild(sortedRows[i]);
+            };
+        }
+      }
+
+        // Funktion zum Filtern der Laender nach Namen (Suchfeld)
+        function filterByCountry(searchTerm) {
+          const table = document.getElementById('country-table');
+          const rows = table.getElementsByTagName('tr');
+
+          for (let i = 1; i < rows.length; i++) {
+            const row = rows[i];
+            const countryName = row.getElementsByTagName('td')[0].textContent.toLowerCase();  //textContent verhindert Code-Injection
+
+            if (countryName.includes(searchTerm.toLowerCase())) {
+              row.style.display = '';
+            } else {
+              row.style.display = 'none';
+            }
+          }
+        }
+
+        // Funktion zum Filtern der Unternehmen nach Namen (Suchfeld)
+        function filterByCompany(searchTerm) {
+          const table = document.getElementById('company-table');
+          const rows = table.getElementsByTagName('tr');
+
+          for (let i = 1; i < rows.length; i++) {
+            const row = rows[i];
+            const companyName = row.getElementsByTagName('td')[0].textContent.toLowerCase();  //textContent verhindert Code-Injection
+
+            if (companyName.includes(searchTerm.toLowerCase())) {
+              row.style.display = '';
+            } else {
+              row.style.display = 'none';
+            }
+          }
+        }
+
+        // Event-Handler soll neuladen der Seite bei druecken der Return Taste in der Laendersuche verhindern
+          document.getElementById('search-country').addEventListener('keypress', function (event) {
+            if (event.key === 'Enter') {
+              event.preventDefault(); // Verhindert das Neuladen der Seite
+              this.blur(); // Suchfeld verliert Fokus
+            }
+          });
+
+          // Event-Handler soll neuladen der Seite bei druecken der Return Taste in der Laendersuche verhindern
+          document.getElementById('search-company').addEventListener('keypress', function (event) {
+            if (event.key === 'Enter') {
+              event.preventDefault(); // Verhindert das Neuladen der Seite
+              this.blur(); // Suchfeld verliert Fokus
+            }
+          });
+
+
+        // JavaScript, um die Browsersprache zu erkennen
+        var lang = window.navigator.language || window.navigator.userLanguage;
+        var isRtlLanguage = ["ar", "he", "fa", "ur"].includes(lang.substr(0, 2));
+        
+        // Ausgabe des erkannten Werts der Browsersprache in der Konsole
+        console.log("Erkannte Browsersprache:", lang);
+
+        // CSS-Klasse basierend auf der Sprache hinzufügen
+        var navbar = document.querySelector('.navbar');
+        if (isRtlLanguage) {
+          navbar.classList.add('navbar-rtl');
+        }
+
+      window.onload = function() {
+        anzeigenDatenCountries();
+        anzeigenDatenCompanies();
+      };
+
+  </script>   
 </html>
