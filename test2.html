@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menüplatzierung basierend auf Browsersprache mit Bootstrap</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    /* Stile für die Menüplatzierung bei rtl-Sprachen */
+    .navbar-rtl {
+      justify-content: flex-end;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light d-flex">
+    <!-- Hier dein Menü-HTML einfügen -->
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Contact</a>
+      </li>
+    </ul>
+  </nav>
+
+  <script>
+    // JavaScript, um die Browsersprache zu erkennen
+    var lang = window.navigator.language || window.navigator.userLanguage;
+    var isRtlLanguage = ["ar", "he", "fa", "ur"].includes(lang.substr(0, 2));
+    
+    // Ausgabe des erkannten Werts der Browsersprache in der Konsole
+    console.log("Erkannte Browsersprache:", lang);
+
+    // CSS-Klasse basierend auf der Sprache hinzufügen
+    var navbar = document.querySelector('.navbar');
+    if (isRtlLanguage) {
+      navbar.classList.add('navbar-rtl');
+    }
+  </script>
+
+  <!-- Bootstrap JavaScript und jQuery -->
+  <!--<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>-->
+</body>
+</html>
