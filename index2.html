@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de" dir="auto"> <!--dir="auto" fuer rtl anpassung-->
+<html lang="de">
   <head>
     <title>Global Carbon Insights</title>
     
@@ -37,7 +37,7 @@
                 <img src="Logo1.jpg" alt="Logo" class="img-fluid">
             </div>
             <div class="col-sm-8">
-                <h1 dir="auto">العنوان الأول</h1>
+                <!--<h1 dir="auto">العنوان الأول</h1>-->
                 <h1 dir="auto">Global Carbon Insights</h1>
                 <h2>Unsere Mission sind Transparenz und Aufklärung!</h2>
             </div>
@@ -46,42 +46,16 @@
 
       <!--Menue der internen Links zur Navigation auf der Webseite-->
       <main class="d-flex">
-        <div class="d-flex justify-content-end flex-row-reverse" id="menue">
-            <!--<nav class="d-flex flex-shrink-0 p-2" style="width: 180px">
-                <ul class="nav mb-auto">
-                  <li><a href="#about-section">Über uns</a></li>
-                  <li><a href="#countries_CO2">CO2 der Länder</a></li>
-                  <li><a href="#companies_CO2">CO2 der Unternehmen</a></li>
-                </ul>
-            </nav>
-        </div>-->
-        
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <!-- Hier dein Menü-HTML einfügen -->
-          <ul class="nav mb-auto">
-            <li><a href="#about-section">Über uns</a></li>
-            <li><a href="#countries_CO2">CO2 der Länder</a></li>
-            <li><a href="#companies_CO2">CO2 der Unternehmen</a></li>
-          </ul>
-
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item active">
-                <a class="nav-link" href="#about-section">Über uns</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#countries_CO2">CO2 der Länder</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#companies_CO2">CO2 der Unternehmen</a>
-              </li>
-            </ul>
-          </div>
-        </nav>
-                
+        <div id="menue">
+          <nav class="d-flex flex-shrink-0 p-2" style="width: 180px">
+              <ul class="nav mb-auto">
+              <li><a href="#about-section">Über uns</a></li>
+              <li><a href="#countries_CO2">CO2 der Länder</a></li>
+              <li><a href="#companies_CO2">CO2 der Unternehmen</a></li>
+              </ul>
+          </nav>
+      </div>
+            
         
         <div class="col-md-9"> 
           <!-- Section - Über uns -->    
@@ -580,20 +554,6 @@ const jsonData2 = {
               this.blur(); // Suchfeld verliert Fokus
             }
           });
-
-
-        // JavaScript, um die Browsersprache zu erkennen
-        var lang = window.navigator.language || window.navigator.userLanguage;
-        var isRtlLanguage = ["ar", "he", "fa", "ur"].includes(lang.substr(0, 2));
-        
-        // Ausgabe des erkannten Werts der Browsersprache in der Konsole
-        console.log("Erkannte Browsersprache:", lang);
-
-        // CSS-Klasse basierend auf der Sprache hinzufügen
-        var navbar = document.querySelector('.navbar');
-        if (isRtlLanguage) {
-          navbar.classList.add('navbar-rtl');
-        }
 
       window.onload = function() {
         anzeigenDatenCountries();
