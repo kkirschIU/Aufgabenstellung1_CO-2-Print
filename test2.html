@@ -1,53 +1,344 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Menüplatzierung basierend auf Browsersprache mit Bootstrap</title>
   <!-- Bootstrap CSS -->
   <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">-->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2/dist/css/bootstrap.min.css">
+
   <style>
     /* Stile für die Menüplatzierung bei rtl-Sprachen */
     .navbar-rtl {
       justify-content: flex-end;
     }
+
+            /*Responsives Design fuer header*/
+                /*header {
+                  display: flex;
+                  flex-wrap: wrap;
+                  justify-content: space-between;
+                  align-items: left;
+                  padding: 1rem;
+              }
+
+              .col-sm-4 {
+                  flex: 1 1 100%;
+                  max-width: 100%;
+                  margin-bottom: 1rem;
+                  text-align: left;
+              }
+
+              .col-sm-8 {
+                  flex: 1 1 100%;
+                  max-width: 100%;
+                  margin-bottom: 1rem;
+                  text-align: left;
+              }
+
+              /* Responsive styles for main content */
+              main {
+                  display: flex;
+                  flex-wrap: wrap;
+                  justify-content: space-between;
+                  align-items: flex-start;
+                  padding: 1rem;
+              }
+
+              #menue {
+                  flex: 1 1 180px;
+                  max-width: 180px;
+                  margin-bottom: 1rem;
+              }
+
+              .col-md-9 {
+                  flex: 1 1 calc(100% - 200px);
+                  max-width: calc(100% - 200px);
+                  margin-bottom: 1rem;
+              }
+
+              /* Responsive styles for footer */
+              footer {
+                  display: flex;
+                  flex-wrap: wrap;
+                  justify-content: flex-end;
+                  padding: 1rem;
+              }
+
+                  /* Additional responsive adjustments for different screen sizes */
+                  @media (max-width: 576px) {
+                      .col-sm-4, .col-sm-8 {
+                          text-align: center;
+                      }
+
+                      #menue {
+                          flex: 1 1 100%;
+                          max-width: 100%;
+                      }
+
+                      .col-md-9 {
+                          flex: 1 1 100%;
+                          max-width: 100%;
+                      }
+                  }
+
+                  .nav-item {
+                   margin-right: 10px; /* Adjust the value to set the desired spacing */
+                   }
   </style>
 </head>
+
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light d-flex">
-    <!-- Hier dein Menü-HTML einfügen -->
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">About</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Contact</a>
-      </li>
-    </ul>
-  </nav>
 
-  <script>
-    // JavaScript, um die Browsersprache zu erkennen
-    var lang = window.navigator.language || window.navigator.userLanguage;
-    var isRtlLanguage = ["ar", "he", "fa", "ur"].includes(lang.substr(0, 2));
-    
-    // Ausgabe des erkannten Werts der Browsersprache in der Konsole
-    console.log("Erkannte Browsersprache:", lang);
+  <div class="container">
+        
+    <header class="row align-items-center">
+        <!--Globale Navigation-->
+        <nav class="d-flex justify-content-end py-3 my-4 border-top">
+            <ul class="nav">
+            <li class="nav-item"><a
+                    href="https://www.twitter.com/globalcarboninsights">Twitter</a></li>
+            <li class="nav-item"><a
+                    href="https://www.instagram.com/globalcarboninsights">Instagram</a></li>
+            <li class="nav-item"><a
+                    href="https://www.facebook.com/globalcarboninsights">Facebook</a></li>
+            </ul>
+        </nav>
 
-    // CSS-Klasse basierend auf der Sprache hinzufügen
-    var navbar = document.querySelector('.navbar');
-    if (isRtlLanguage) {
-      navbar.classList.add('navbar-rtl');
-    }
-  </script>
+        <div class="col-sm-4">
+            <img src="Logo1.jpg" alt="Logo" class="img-fluid">
+        </div>
+        <div class="col-sm-8">
+            <h1>Global Carbon Insights e.V.</h1>
+            <h2>Unsere Mission sind Transparenz und Aufklärung!</h2>
+        </div>
+    </header>
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light d-flex">
+        <!-- Hier dein Menü-HTML einfügen -->
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="#about-section">Über uns</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#countries_CO2">CO2 der Länder</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#companies_CO2">CO2 der Unternehmen</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="col-md-9"> 
+        <!-- Section - Über uns -->    
+        <div class="list-group mb-4">
+          <section id="about-section" class="list-group-item">
+          <h1>Über uns - Global Carbon Insights</h1>
+          <p>
+            Herzlich willkommen bei Global Carbon Insights! Wir sind ein engagiertes Non-Profit-Unternehmen, das sich leidenschaftlich dem Kampf gegen den Klimawandel verschrieben hat. Unsere Mission ist es, das Bewusstsein für die drängenden Herausforderungen des Klimawandels zu schärfen und die Öffentlichkeit über die CO2-Emissionen von Ländern und Unternehmen weltweit aufzuklären.
+          </p>
+        
+          <h2>Unsere Geschichte</h2>
+          <p>
+            Global Carbon Insights wurde ursprünglich von einer Gruppe von begeisterten Umweltschützern und Forschern ins Leben gerufen, die eine gemeinsame Vision teilten: Eine Welt zu schaffen, in der alle Menschen über die Auswirkungen ihrer Handlungen auf den Planeten informiert sind. Unsere Gründer waren zutiefst besorgt über die zunehmenden Naturkatastrophen und Extremwetterereignisse, die durch den Klimawandel verursacht wurden, und sie erkannten die dringende Notwendigkeit, Maßnahmen zu ergreifen.
+          </p>
+        
+          <h2>Unsere Motivation</h2>
+          <p>
+            Unsere Motivation entstammt der Überzeugung, dass Wissen und Transparenz der Schlüssel zur Veränderung sind. Indem wir verlässliche Daten über die CO2-Emissionen von Ländern und Unternehmen zugänglich machen, ermöglichen wir es der Weltgemeinschaft, informierte Entscheidungen zu treffen und gezielte Schritte zur Reduzierung ihres ökologischen Fußabdrucks zu unternehmen.
+          </p>
+          <p>
+            Der Klimawandel hat bereits dramatische Auswirkungen auf unseren Planeten, von schmelzenden Gletschern bis hin zu verheerenden Naturkatastrophen wie Stürmen, Dürren und Überschwemmungen. Wir sehen die Verbindung zwischen dem Klimawandel und diesen Naturkatastrophen als Weckruf für dringende Maßnahmen. Durch Aufklärung und Sensibilisierung möchten wir die Menschen dazu inspirieren, gemeinsam für eine nachhaltige Zukunft einzutreten.
+          </p>
+        
+          <h2>Unser Ziel</h2>
+          <p>
+            Unser Ziel ist es, jedem Bürger einen klaren Überblick über die CO2-Emissionen von Ländern und Unternehmen zu geben, damit sie die Auswirkungen auf unser Klima besser verstehen können. Wir glauben, dass Wissen die Grundlage für kollektive Veränderung ist. Indem wir aufklären und informieren, hoffen wir, dass Menschen und Regierungen auf der ganzen Welt Maßnahmen ergreifen, um den Klimawandel zu bekämpfen und eine lebenswerte Umwelt für zukünftige Generationen zu bewahren.
+          </p>
+          <p>
+            Wir sind fest davon überzeugt, dass jeder Einzelne einen wertvollen Beitrag zum Klimaschutz leisten kann. Gemeinsam können wir den Klimawandel bekämpfen und eine nachhaltige, blühende Zukunft für unseren wunderbaren Planeten gestalten.
+          </p>
+        
+          <h2>Vielen Dank, dass Sie uns auf dieser wichtigen Reise begleiten!</h2>
+          <p></p>
+          <h1>Gemeinsam für den Planeten. Gemeinsam für eine nachhaltige Zukunft.</h1>
+        </section>
+       </div>
+
+       <!-- Section - CO2-Footprint der Laender -->
+       <div class="list-group mb-4"> 
+        <section id="countries_CO2" class="list-group-item">
+          <h1>CO2-Fooprint der Länder</h1>
+          <p>
+            Im Bereich "Footprint der Länder" finden Sie eine Auflistung der Länder, deren messbarer Footprint größer als 1 ist. Hierbei werden die relativen Zahlen gemessen am CO2-Ausstoß pro Kopf betrachtet, anstatt absolute Zahlen pro Land zu verwenden. Dieser Ansatz kann zu abweichenden Ergebnissen im Vergleich zu anderen Webseiten und Projekten führen, die ausschließlich absolute Zahlen berücksichtigen.
+          </p>
+          <p>
+            Nehmen wir beispielsweise China und Deutschland: Obwohl China insgesamt einen höheren absoluten CO2-Ausstoß aufweisen könnte, ist der pro Kopf-Ausstoß geringer als in Deutschland. Dies liegt daran, dass viele Unternehmen aus Europa und den USA in China produzieren und damit vor Ort zusätzliche Emissionen verursachen. Um ein realistischeres Bild zu erhalten, müssen diese Emissionen auch auf die Empfängerländer in Europa und den USA verteilt werden.
+          </p>
+          <p>  
+            Durch die Fokussierung auf den relativen CO2-Ausstoß pro Kopf möchten wir eine differenzierte Betrachtung ermöglichen und verdeutlichen, dass der Einfluss von Produktions- und Konsummustern über Ländergrenzen hinweg betrachtet werden sollte. Dieser Ansatz ermöglicht es uns, die globalen Zusammenhänge besser zu verstehen und die Verantwortung jedes Landes für den individuellen Beitrag zum Klimawandel genauer zu bewerten.
+          </p>
+
+          <div class="row mt-3">
+            <div class="col-md-6 mb-3">
+                <!-- Suchfeld zum Filtern nach einzelnen Ländern -->
+                <form>
+                    <input type="text" class="form-control" name="suche" id="search-country" placeholder="Suche nach Land" oninput="filterByCountry(this.value)">
+                </form>
+            </div>
+        
+            <div class="col-md-6">
+                <!-- Drop-Down-Menü zum Filtern der Länder nach Alphabet, nach CO2-Ausstoß aufsteigend oder absteigend -->
+                <form class="form-inline">
+                    <select id="sortOption" class="form-select" onchange="sortTable()">
+                        <option value="default">Sortieren nach:</option>
+                        <option value="alphabetical">Land (alphabetisch)</option>
+                        <option value="emissions_asc">CO²-Emissionen (aufsteigend)</option>
+                        <option value="emissions_desc">CO²-Emissionen (absteigend)</option>
+                    </select>
+                </form>
+            </div>
+        
+        
+        <div class="table-responsive-countries">
+            <table class="table table-bordered table-striped" id="country-table">
+                <thead>
+                    <tr>
+                        <th>Land</th>
+                        <th>tCO2/Kopf</th>
+                    </tr>
+                </thead>
+                <tbody id="country-data">
+                    <!-- Hier werden die JSON-Daten angezeigt -->
+                </tbody>
+            </table>
+        </div>
+        </section>
+      </div>
+
+
+      <footer class="d-flex justify-content-end py-3 my-4 border-top">
+        <nav>
+            <ul class="nav">
+              <li class="nav-item"><a 
+                     href="contact.html">Kontakt</a></li>
+              <li class="nav-item"><a 
+                     href="imprint.html">Impressum</a></li>
+            </ul>
+          </nav>
+
+    </footer>
+
+  </div>
+
+
+          <script>
+            // JavaScript, um die Browsersprache zu erkennen
+            var lang = window.navigator.language || window.navigator.userLanguage;
+            var isRtlLanguage = ["ar", "he", "fa", "ur"].includes(lang.substr(0, 2));
+            
+            // Ausgabe des erkannten Werts der Browsersprache in der Konsole
+            console.log("Erkannte Browsersprache:", lang);
+
+            // CSS-Klasse basierend auf der Sprache hinzufügen
+            var navbar = document.querySelector('.navbar');
+            if (isRtlLanguage) {
+              navbar.classList.add('navbar-rtl');
+            }
+          </script>
 
   <!-- Bootstrap JavaScript und jQuery -->
   <!--<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>-->
 </body>
+
+      <script>
+        const jsonData = {
+            "countries": [
+            {"tCO2/Kopf": 38.2, "Land": "Luxemburg"},
+            {"tCO2/Kopf": 25.4, "Land": "Katar"},
+            {"tCO2/Kopf": 23.2, "Land": "UAE"},
+            {"tCO2/Kopf": 23.2, "Land": "Kuwait"},
+            {"tCO2/Kopf": 23.2, "Land": "Brunei"},
+            {"tCO2/Kopf": 19.2, "Land": "Singapur"},
+            {"tCO2/Kopf": 18.4, "Land": "Trinidad & Tobago"},
+            {"tCO2/Kopf": 17.9, "Land": "Saudi-Arabien"},
+            {"tCO2/Kopf": 17.6, "Land": "USA"},
+            {"tCO2/Kopf": 15.9, "Land": "Kanada"},
+            {"tCO2/Kopf": 15.4, "Land": "Belgien"},
+            {"tCO2/Kopf": 15.2, "Land": "Australien"},
+            {"tCO2/Kopf": 14.7, "Land": "Hongkong"},
+            {"tCO2/Kopf": 14.1, "Land": "Schweiz"},
+            {"tCO2/Kopf": 13.8, "Land": "Estland"},
+            {"tCO2/Kopf": 13.6, "Land": "Oman"}  
+      ]
+      };
+      // Funktion zum Anzeigen der Laender-Emissions JSON-Daten in HTML
+      function anzeigenDatenCountries() {
+              const tableBody = document.getElementById('country-data');
+
+              jsonData.countries.forEach(country => {
+                const row = document.createElement('tr');
+                const landCell = document.createElement('td');
+                const tco2Cell = document.createElement('td');
+
+                landCell.textContent = country.Land;
+                tco2Cell.textContent = country['tCO2/Kopf'];
+
+                row.appendChild(landCell);
+                row.appendChild(tco2Cell);
+
+                tableBody.appendChild(row);
+              });
+            }
+
+            // Die Funktion zum Sortieren der Laendertabelle: Alphabetisch, Aufsteigend, Absteigend
+            function sortTable() {
+        const table = document.getElementById('country-table');
+        const rows = table.getElementsByTagName('tr');
+        const sortOption = document.getElementById('sortOption').value;
+
+        if (sortOption === 'alphabetical') {
+          const sortedRows = Array.from(rows).slice(1).sort((a, b) => {
+            const cellA = a.getElementsByTagName('td')[0].textContent.toLowerCase();
+            const cellB = b.getElementsByTagName('td')[0].textContent.toLowerCase();
+            return cellA.localeCompare(cellB);
+          });
+
+          for (let i = 0; i < sortedRows.length; i++) {
+            table.appendChild(sortedRows[i]);
+          }
+        } else if (sortOption === 'emissions_asc') {
+            const sortedRows = Array.from(rows).slice(1).sort((a, b) => {
+            const cellA = parseFloat(a.getElementsByTagName('td')[1].textContent);
+            const cellB = parseFloat(b.getElementsByTagName('td')[1].textContent);
+            return cellA - cellB;
+          });
+
+          for (let i = 0; i < sortedRows.length; i++) {
+            table.appendChild(sortedRows[i]);
+          };  
+
+        } else if (sortOption === 'emissions_desc') {
+            const sortedRows = Array.from(rows).slice(1).sort((a, b) => {
+            const cellA = parseFloat(a.getElementsByTagName('td')[1].textContent);
+            const cellB = parseFloat(b.getElementsByTagName('td')[1].textContent);
+            return cellB - cellA; // Reihenfolge umgekehrt, um absteigende Sortierung zu erhalten
+          });
+
+          for (let i = 0; i < sortedRows.length; i++) {
+          table.appendChild(sortedRows[i]);
+            };
+        }
+      }
+
+      window.onload = function() {
+        anzeigenDatenCountries();
+        anzeigenDatenCompanies();
+      };
+      </script>
+
 </html>
