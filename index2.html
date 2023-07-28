@@ -13,6 +13,75 @@
           .navbar-rtl {
             justify-content: flex-end;
           }
+
+        /*Responsives Design fuer header*/
+          header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+        }
+
+        .col-sm-4 {
+            flex: 1 1 100%;
+            max-width: 100%;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .col-sm-8 {
+            flex: 1 1 100%;
+            max-width: 100%;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        /* Responsive styles for main content */
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 1rem;
+        }
+
+        #menue {
+            flex: 1 1 180px;
+            max-width: 180px;
+            margin-bottom: 1rem;
+        }
+
+        .col-md-9 {
+            flex: 1 1 calc(100% - 200px);
+            max-width: calc(100% - 200px);
+            margin-bottom: 1rem;
+        }
+
+        /* Responsive styles for footer */
+        footer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            padding: 1rem;
+        }
+
+        /* Additional responsive adjustments for different screen sizes */
+        @media (max-width: 576px) {
+            .col-sm-4, .col-sm-8 {
+                text-align: center;
+            }
+
+            #menue {
+                flex: 1 1 100%;
+                max-width: 100%;
+            }
+
+            .col-md-9 {
+                flex: 1 1 100%;
+                max-width: 100%;
+            }
+        }
         </style>
   </head>
 
