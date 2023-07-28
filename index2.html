@@ -6,8 +6,7 @@
         <!--Einbindung Bootstrap Framework für CSS-->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2/dist/css/bootstrap.min.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!--Platzhalter für media query für responsive design (Kapitel 4)-->
-
+        
         <style>
           /* Stile für die Menüplatzierung bei rtl-Sprachen */
           .navbar-rtl {
@@ -15,73 +14,77 @@
           }
 
         /*Responsives Design fuer header*/
-          header {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem;
-        }
+                /*header {
+                  display: flex;
+                  flex-wrap: wrap;
+                  justify-content: space-between;
+                  align-items: left;
+                  padding: 1rem;
+              }
 
-        .col-sm-4 {
-            flex: 1 1 100%;
-            max-width: 100%;
-            margin-bottom: 1rem;
-            text-align: center;
-        }
+              .col-sm-4 {
+                  flex: 1 1 100%;
+                  max-width: 100%;
+                  margin-bottom: 1rem;
+                  text-align: left;
+              }
 
-        .col-sm-8 {
-            flex: 1 1 100%;
-            max-width: 100%;
-            margin-bottom: 1rem;
-            text-align: center;
-        }
+              .col-sm-8 {
+                  flex: 1 1 100%;
+                  max-width: 100%;
+                  margin-bottom: 1rem;
+                  text-align: left;
+              }
 
-        /* Responsive styles for main content */
-        main {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: flex-start;
-            padding: 1rem;
-        }
+              /* Responsive styles for main content */
+              main {
+                  display: flex;
+                  flex-wrap: wrap;
+                  justify-content: space-between;
+                  align-items: flex-start;
+                  padding: 1rem;
+              }
 
-        #menue {
-            flex: 1 1 180px;
-            max-width: 180px;
-            margin-bottom: 1rem;
-        }
+              #menue {
+                  flex: 1 1 180px;
+                  max-width: 180px;
+                  margin-bottom: 1rem;
+              }
 
-        .col-md-9 {
-            flex: 1 1 calc(100% - 200px);
-            max-width: calc(100% - 200px);
-            margin-bottom: 1rem;
-        }
+              .col-md-9 {
+                  flex: 1 1 calc(100% - 200px);
+                  max-width: calc(100% - 200px);
+                  margin-bottom: 1rem;
+              }
 
-        /* Responsive styles for footer */
-        footer {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: flex-end;
-            padding: 1rem;
-        }
+              /* Responsive styles for footer */
+              footer {
+                  display: flex;
+                  flex-wrap: wrap;
+                  justify-content: flex-end;
+                  padding: 1rem;
+              }
 
-        /* Additional responsive adjustments for different screen sizes */
-        @media (max-width: 576px) {
-            .col-sm-4, .col-sm-8 {
-                text-align: center;
-            }
+                  /* Additional responsive adjustments for different screen sizes */
+                  @media (max-width: 576px) {
+                      .col-sm-4, .col-sm-8 {
+                          text-align: center;
+                      }
 
-            #menue {
-                flex: 1 1 100%;
-                max-width: 100%;
-            }
+                      #menue {
+                          flex: 1 1 100%;
+                          max-width: 100%;
+                      }
 
-            .col-md-9 {
-                flex: 1 1 100%;
-                max-width: 100%;
-            }
-        }
+                      .col-md-9 {
+                          flex: 1 1 100%;
+                          max-width: 100%;
+                      }
+                  }
+
+                  .nav-item {
+                   margin-right: 10px; /* Adjust the value to set the desired spacing */
+                   }
         </style>
   </head>
 
@@ -106,7 +109,7 @@
                 <img src="Logo1.jpg" alt="Logo" class="img-fluid">
             </div>
             <div class="col-sm-8">
-                <h1 dir="auto">Global Carbon Insights</h1>
+                <h1>Global Carbon Insights e.V.</h1>
                 <h2>Unsere Mission sind Transparenz und Aufklärung!</h2>
             </div>
         </header>
@@ -167,7 +170,13 @@
           <section id="countries_CO2" class="list-group-item">
             <h1>CO2-Fooprint der Länder</h1>
             <p>
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
+              Im Bereich "Footprint der Länder" finden Sie eine Auflistung der Länder, deren messbarer Footprint größer als 1 ist. Hierbei werden die relativen Zahlen gemessen am CO2-Ausstoß pro Kopf betrachtet, anstatt absolute Zahlen pro Land zu verwenden. Dieser Ansatz kann zu abweichenden Ergebnissen im Vergleich zu anderen Webseiten und Projekten führen, die ausschließlich absolute Zahlen berücksichtigen.
+            </p>
+            <p>
+              Nehmen wir beispielsweise China und Deutschland: Obwohl China insgesamt einen höheren absoluten CO2-Ausstoß aufweisen könnte, ist der pro Kopf-Ausstoß geringer als in Deutschland. Dies liegt daran, dass viele Unternehmen aus Europa und den USA in China produzieren und damit vor Ort zusätzliche Emissionen verursachen. Um ein realistischeres Bild zu erhalten, müssen diese Emissionen auch auf die Empfängerländer in Europa und den USA verteilt werden.
+            </p>
+            <p>  
+              Durch die Fokussierung auf den relativen CO2-Ausstoß pro Kopf möchten wir eine differenzierte Betrachtung ermöglichen und verdeutlichen, dass der Einfluss von Produktions- und Konsummustern über Ländergrenzen hinweg betrachtet werden sollte. Dieser Ansatz ermöglicht es uns, die globalen Zusammenhänge besser zu verstehen und die Verantwortung jedes Landes für den individuellen Beitrag zum Klimawandel genauer zu bewerten.
             </p>
 
             <div class="row mt-3">
@@ -212,7 +221,7 @@
           <section id="companies_CO2"  class="list-group-item">
             <h1>CO2-Fooprint der Unternehmen</h1>
             <p>
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
+              Im Bereich "CO2 Footprint der Unternehmen" ist es wichtig zu beachten, dass es keine zusammengefassten Daten wie für Länder gibt. Dies liegt hauptsächlich daran, dass die CO2-Berechnung in der Verantwortung der Unternehmen selbst liegt und häufig nur auf der Grundlage von unternehmensinternen Informationen möglich ist. Die Offenlegung von CO2-Emissionen durch Unternehmen kann variieren und hängt oft von der Transparenz und Nachhaltigkeitsstrategie jedes einzelnen Unternehmens ab. Einige Unternehmen veröffentlichen umfassende Berichte über ihre Emissionen und Nachhaltigkeitsbemühungen, während andere möglicherweise weniger transparent sind. Dennoch bemüht sich Global Carbon Insights, soweit wie möglich relevante und verlässliche Informationen zu den CO2-Emissionen von Unternehmen bereitzustellen, um einen Beitrag zur Sensibilisierung und Transparenz in Bezug auf den Unternehmensbeitrag zum Klimawandel zu leisten. Die Liste der Unternehmen wird dabei stetig erweitert.
             </p>
 
           <div class="row mt-3">
