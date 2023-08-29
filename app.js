@@ -95,4 +95,13 @@
       }
     });
 
- 
+    new Vue({
+      el: '#rtl',
+      data: {
+        isRtlLanguage: false
+      },
+      mounted() {
+        const lang = window.navigator.language || window.navigator.userLanguage;
+        this.isRtlLanguage = ["ar", "he", "fa", "ur"].includes(lang.substr(0, 2));
+      }
+    });
