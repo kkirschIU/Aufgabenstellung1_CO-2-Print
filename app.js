@@ -47,15 +47,52 @@
   });
 
 
-  
-  new Vue({
-    el: '#rtl',
-    data: {
-      isRtlLanguage: false
-    },
-    mounted() {
-      const lang = window.navigator.language || window.navigator.userLanguage;
-      this.isRtlLanguage = ["ar", "he", "fa", "ur"].includes(lang.substr(0, 2));
-    }
-  });
-  
+    new Vue({
+      el: '#companies_CO2',
+      data: {
+        companies: [],
+        filteredCompanies: [],
+        companySearchTerm: '',
+        sortOption: 'default'
+      },
+      mounted() {
+        fetch('companies.json')
+          .then(response => response.json())
+          .then(data => {
+            this.companies = data.companies;
+            this.filteredCompanies = data.companies;
+          })
+          .catch(error => {
+            console.error('Fehler beim Laden der Daten:', error);
+          });
+      },
+      methods: {
+        filterCompanies() {
+          const searchTerm = this.companySearchTerm.toLowerCase();
+          this.filteredCompanies = this.companies.filter(company => company.name.toLowerCase().includes(searchTerm));
+        },
+        sortTableCompany() {
+          const rows = this.filteredCompanies.slice(0); // Kopie der gefilterten Unternehmen
+    
+          if (this.sortOption === 'alphabetical') {
+            rows.sort((a, b) => a.name.localeCompare(b.name));
+          } else if (this.sortOption === 'emissions_asc') {
+            rows.sort((a, b) => a.co2_ausstoß - b.co2_ausstoß);
+          } else if (this.sortOption === 'emissions_desc') {
+            rows.sort((a, b) => b.co2_ausstoß - a.co2_ausstoß);
+          }
+    
+          this.filteredCompanies = rows;
+        }
+      },
+      watch: {
+        companySearchTerm() {
+          this.filterCompanies();
+        },
+        sortOption() {
+          this.sortTableCompany();
+        }
+      }
+    });
+
+ 
