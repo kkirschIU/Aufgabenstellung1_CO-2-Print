@@ -8,9 +8,6 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2/dist/css/bootstrap.min.css">
 
-  <!-- Einbindung von Vue.js als JavaScript Framework -->
-  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-
   <style>
     /* Stile für die Containerplatzierung bei rtl-Sprachen */
     .container-wrapper {
@@ -36,7 +33,6 @@
 
 <body>
 
-  <!--<script src="app.js"></script>-->
 
 <div class="container border">
 
@@ -57,15 +53,15 @@
             <img src="Logo1.jpg" alt="Logo" class="img-fluid">
         </div>
         <div class="col-sm-8">
-            <h1>Global Carbon Insights e.V.</h1>
+            <h1>Global Carbon Insights e.V. (mit vue)</h1>
             <h2>Unsere Mission sind Transparenz und Aufklärung!</h2>
         </div>
     </header>
 
 <main>
 
-<div class="container-wrapper my-4">
-  <div class="container-nav border" id="app" :class="{rtl: isRtlLanguage, ltr: !isRtlLanguage }">
+  <div class="container-wrapper my-4" id="rtl" :class="{ rtl: isRtlLanguage, ltr: !isRtlLanguage }">
+  <div class="container-nav border"> <!-- id="app" :class="{rtl: isRtlLanguage, ltr: !isRtlLanguage }"-->
     <nav class="d-flex flex-shrink-0 p-2 sticky-top" style="width: 180px">
         <ul class="nav mb-auto">
         <li><a href="#about-section">Über uns</a></li>
@@ -108,95 +104,96 @@
         <h1>Gemeinsam für den Planeten. Gemeinsam für eine nachhaltige Zukunft.</h1>
     </section>
 
-    <section id="countries_CO2" class="list-group-item border">
-        <h1>CO2-Fooprint der Länder</h1>
-        <p>
-            Im Bereich "Footprint der Länder" finden Sie eine Auflistung der Länder, deren messbarer Footprint größer als 1 ist. Hierbei werden die relativen Zahlen gemessen am CO2-Ausstoß pro Kopf betrachtet, anstatt absolute Zahlen pro Land zu verwenden. Dieser Ansatz kann zu abweichenden Ergebnissen im Vergleich zu anderen Webseiten und Projekten führen, die ausschließlich absolute Zahlen berücksichtigen.
-        </p>
-        <p>
-            Nehmen wir beispielsweise China und Deutschland: Obwohl China insgesamt einen höheren absoluten CO2-Ausstoß aufweisen könnte, ist der pro Kopf-Ausstoß geringer als in Deutschland. Dies liegt daran, dass viele Unternehmen aus Europa und den USA in China produzieren und damit vor Ort zusätzliche Emissionen verursachen. Um ein realistischeres Bild zu erhalten, müssen diese Emissionen auch auf die Empfängerländer in Europa und den USA verteilt werden.
-        </p>
-        <p>  
-            Durch die Fokussierung auf den relativen CO2-Ausstoß pro Kopf möchten wir eine differenzierte Betrachtung ermöglichen und verdeutlichen, dass der Einfluss von Produktions- und Konsummustern über Ländergrenzen hinweg betrachtet werden sollte. Dieser Ansatz ermöglicht es uns, die globalen Zusammenhänge besser zu verstehen und die Verantwortung jedes Landes für den individuellen Beitrag zum Klimawandel genauer zu bewerten.
-        </p>
-
-        <div class="row mt-3">
-            <div class="col-md-6 mb-3">
-                <!-- Suchfeld zum Filtern nach einzelnen Ländern -->
-                <form>
-                    <input type="text" class="form-control" name="suche" id="search-country" placeholder="Suche nach Land" oninput="filterByCountry(this.value)">
-                </form>
-            </div>
-        
-            <div class="col-md-6">
-                <!-- Drop-Down-Menü zum Filtern der Länder nach Alphabet, nach CO2-Ausstoß aufsteigend oder absteigend -->
-                <form class="form-inline">
-                    <select id="sortOption" class="form-select" onchange="sortTable()">
-                        <option value="default">Sortieren nach:</option>
-                        <option value="alphabetical">Land (alphabetisch)</option>
-                        <option value="emissions_asc">CO²-Emissionen (aufsteigend)</option>
-                        <option value="emissions_desc">CO²-Emissionen (absteigend)</option>
-                    </select>
-                </form>
-            </div>
-        
-        
-        <div class="table-responsive-countries">
-            <table class="table table-bordered table-striped" id="country-table">
+    <section id="countries_CO2" class="list-group-item border my-4">
+      <h1>CO2-Fußabdruck der Länder</h1>
+      <p>
+        Im Bereich "Footprint der Länder" finden Sie eine Auflistung der Länder, deren messbarer Footprint größer als 1 ist. Hierbei werden die relativen Zahlen gemessen am CO2-Ausstoß pro Kopf betrachtet, anstatt absolute Zahlen pro Land zu verwenden. Dieser Ansatz kann zu abweichenden Ergebnissen im Vergleich zu anderen Webseiten und Projekten führen, die ausschließlich absolute Zahlen berücksichtigen.
+    </p>
+    <p>
+        Nehmen wir beispielsweise China und Deutschland: Obwohl China insgesamt einen höheren absoluten CO2-Ausstoß aufweisen könnte, ist der pro Kopf-Ausstoß geringer als in Deutschland. Dies liegt daran, dass viele Unternehmen aus Europa und den USA in China produzieren und damit vor Ort zusätzliche Emissionen verursachen. Um ein realistischeres Bild zu erhalten, müssen diese Emissionen auch auf die Empfängerländer in Europa und den USA verteilt werden.
+    </p>
+    <p>  
+        Durch die Fokussierung auf den relativen CO2-Ausstoß pro Kopf möchten wir eine differenzierte Betrachtung ermöglichen und verdeutlichen, dass der Einfluss von Produktions- und Konsummustern über Ländergrenzen hinweg betrachtet werden sollte. Dieser Ansatz ermöglicht es uns, die globalen Zusammenhänge besser zu verstehen und die Verantwortung jedes Landes für den individuellen Beitrag zum Klimawandel genauer zu bewerten.
+    </p>
+  
+      <div class="row mt-3">
+          <div class="col-md-6 mb-3">
+          <!--Suchfeld zum Filtern nach einzelnen Ländern-->
+            <input type="text" class="form-control" v-model="countrySearchTerm" name="suche" id="search-country" placeholder="Suche nach Land">
+          </div>
+  
+          <div class="col-md-6">
+          <!--Drop-Down Menü zum Filtern der Länder nach Alphabet, nach CO2 Ausstoß aufsteigend oder absteigend-->
+          <form class="form-inline">
+            <select id="sortOption" class="form-select" v-model="sortOption">
+              <option value="default">Sortieren nach:</option>
+              <option value="alphabetical">Land (alphabetisch)</option>
+              <option value="emissions_asc">CO²-Emissionen (aufsteigend)</option>
+              <option value="emissions_desc">CO²-Emissionen (absteigend)</option>
+          </select>
+          </form>
+          </div>
+        </div>
+  
+            <div class="table-responsive-countries">
+              <table class="table table-bordered table-striped" id="country-table">
                 <thead>
-                    <tr>
-                        <th>Land</th>
-                        <th>tCO2/Kopf</th>
-                    </tr>
+                  <tr>
+                    <th>Land</th>
+                    <th>tCO2/Kopf</th>
+                  </tr>
                 </thead>
                 <tbody id="country-data">
-                    <!-- Hier werden die JSON-Daten angezeigt -->
+                  <!-- Hier werden die JSON-Daten mit vue.js angezeigt -->
+                  <tr v-for="country in filteredCountries" :key="country.Land">
+                    <td>{{ country.Land }}</td>
+                    <td>{{ country['tCO2/Kopf'] }}</td>
+                  </tr>
                 </tbody>
-            </table>
-        </div>
+              </table>
+            </div>
     </section>
-
+  
     <section id="companies_CO2"  class="list-group-item border my-4">
-        <h1>CO2-Fooprint der Unternehmen</h1>
-        <p>
-          Im Bereich "CO2 Footprint der Unternehmen" ist es wichtig zu beachten, dass es keine zusammengefassten Daten wie für Länder gibt. Dies liegt hauptsächlich daran, dass die CO2-Berechnung in der Verantwortung der Unternehmen selbst liegt und häufig nur auf der Grundlage von unternehmensinternen Informationen möglich ist. Die Offenlegung von CO2-Emissionen durch Unternehmen kann variieren und hängt oft von der Transparenz und Nachhaltigkeitsstrategie jedes einzelnen Unternehmens ab. Einige Unternehmen veröffentlichen umfassende Berichte über ihre Emissionen und Nachhaltigkeitsbemühungen, während andere möglicherweise weniger transparent sind. Dennoch bemüht sich Global Carbon Insights, soweit wie möglich relevante und verlässliche Informationen zu den CO2-Emissionen von Unternehmen bereitzustellen, um einen Beitrag zur Sensibilisierung und Transparenz in Bezug auf den Unternehmensbeitrag zum Klimawandel zu leisten. Die Liste der Unternehmen wird dabei stetig erweitert.
-        </p>
-
-        <div class="row mt-3">
-            <div class="col-md-6 mb-3">
-            <!--Suchfeld zum Filtern nach einzelnen Unternehmen-->
-            <form>
-              <input type="text" class="form-control" name="suche" id="search-company" placeholder="Suche nach Unternehmen" oninput="filterByCompany(this.value)">
-            </form>
-            </div>
-
-            <div class="col-md-6">
-            <!--Drop-Down Menue zum Filtern der Unternehmen nach Alphabet, nach CO2 Ausstoss aufsteigend oder absteigend-->
-            <form class="form-inline">
-                <select id="sortOptionComp" class="form-select" onchange="sortTableCompany()">
-                <option value="default">Sortieren nach:</option>
-                <option value="alphabetical">Unternehmen (alphabetisch)</option>
-                <option value="emissions_asc">CO²-Emissionen (aufsteigend)</option>
-                <option value="emissions_desc">CO²-Emissionen (absteigend)</option>
-            </select>
-            </form>
-            </div>
-          </div>
-
-              <div class="table-responsive-companies">
-                <table class="table table-bordered table-striped" id="company-table">
-                  <thead>
-                    <tr>
-                      <th>Unternehmen</th>
-                      <th>CO2 Ausstoß in Tonnen</th>
-                    </tr>
-                  </thead>
-                  <tbody id="company-data">
-                    <!-- Hier werden die JSON-Daten angezeigt -->
-                  </tbody>
-                </table>
-              </div>
-    </section>
+      <h1>CO2-Fooprint der Unternehmen</h1>
+      <p>
+        Im Bereich "CO2 Footprint der Unternehmen" ist es wichtig zu beachten, dass es keine zusammengefassten Daten wie für Länder gibt. Dies liegt hauptsächlich daran, dass die CO2-Berechnung in der Verantwortung der Unternehmen selbst liegt und häufig nur auf der Grundlage von unternehmensinternen Informationen möglich ist. Die Offenlegung von CO2-Emissionen durch Unternehmen kann variieren und hängt oft von der Transparenz und Nachhaltigkeitsstrategie jedes einzelnen Unternehmens ab. Einige Unternehmen veröffentlichen umfassende Berichte über ihre Emissionen und Nachhaltigkeitsbemühungen, während andere möglicherweise weniger transparent sind. Dennoch bemüht sich Global Carbon Insights, soweit wie möglich relevante und verlässliche Informationen zu den CO2-Emissionen von Unternehmen bereitzustellen, um einen Beitrag zur Sensibilisierung und Transparenz in Bezug auf den Unternehmensbeitrag zum Klimawandel zu leisten. Die Liste der Unternehmen wird dabei stetig erweitert.
+      </p>
+  
+      <div class="row mt-3">
+        <div class="col-md-6 mb-3">
+          <!-- Suchfeld zum Filtern nach einzelnen Unternehmen -->
+          <input type="text" class="form-control" v-model="companySearchTerm" placeholder="Suche nach Unternehmen">
+        </div>
+  
+        <div class="col-md-6">
+          <!-- Dropdown-Menü zum Filtern der Unternehmen -->
+          <select id="sortOptionComp" class="form-select" v-model="sortOption">
+            <option value="default">Sortieren nach:</option>
+            <option value="alphabetical">Unternehmen (alphabetisch)</option>
+            <option value="emissions_asc">CO²-Emissionen (aufsteigend)</option>
+            <option value="emissions_desc">CO²-Emissionen (absteigend)</option>
+          </select>
+        </div>
+      </div>
+  
+      <div class="table-responsive-companies">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>Unternehmen</th>
+              <th>CO2 Ausstoß in Tonnen</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="company in filteredCompanies" :key="company.name">
+              <td>{{ company.name }}</td>
+              <td>{{ company.co2_ausstoß }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  </section>
     </div>
   </div>
 </div>
@@ -204,6 +201,10 @@
 
 </main>
 </div>
+
+<!-- Einbindung von Vue.js als JavaScript Framework -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script src="app.js"></script>
 
 </body>
 
@@ -220,196 +221,4 @@
       </nav>
 </footer>
 
-
-<script>
-    const jsonData = {
-        "countries": [
-        {"tCO2/Kopf": 38.2, "Land": "Luxemburg"},
-        {"tCO2/Kopf": 25.4, "Land": "Katar"},
-        {"tCO2/Kopf": 23.2, "Land": "UAE"},
-        {"tCO2/Kopf": 23.2, "Land": "Kuwait"},
-        {"tCO2/Kopf": 23.2, "Land": "Brunei"},
-        {"tCO2/Kopf": 19.2, "Land": "Singapur"},
-        {"tCO2/Kopf": 18.4, "Land": "Trinidad & Tobago"},
-        {"tCO2/Kopf": 17.9, "Land": "Saudi-Arabien"},
-        {"tCO2/Kopf": 17.6, "Land": "USA"},
-        {"tCO2/Kopf": 15.9, "Land": "Kanada"},
-        {"tCO2/Kopf": 15.4, "Land": "Belgien"},
-        {"tCO2/Kopf": 15.2, "Land": "Australien"},
-        {"tCO2/Kopf": 14.7, "Land": "Hongkong"},
-        {"tCO2/Kopf": 14.1, "Land": "Schweiz"},
-        {"tCO2/Kopf": 13.8, "Land": "Estland"},
-        {"tCO2/Kopf": 13.6, "Land": "Oman"},
-        {"tCO2/Kopf": 13.5, "Land": "Suedkorea"},
-        {"tCO2/Kopf": 12.9, "Land": "Kasachstan"},
-        {"tCO2/Kopf": 12.2, "Land": "Finnland"},
-        {"tCO2/Kopf": 12.1, "Land": "Malta"},
-        {"tCO2/Kopf": 11.5, "Land": "Taiwan"},
-        {"tCO2/Kopf": 11.2, "Land": "Bahrain"},
-        {"tCO2/Kopf": 10.5, "Land": "Oesterreich"},
-        {"tCO2/Kopf": 10.4, "Land": "Deutschland"},
-        {"tCO2/Kopf": 10.3, "Land": "Japan"},
-        {"tCO2/Kopf": 9.7, "Land": "Russland"},
-        {"tCO2/Kopf": 9.6, "Land": "Israel"},
-        {"tCO2/Kopf": 9.1, "Land": "Norwegen"},
-        {"tCO2/Kopf": 9.0, "Land": "Niederlande"},
-        {"tCO2/Kopf": 9.0, "Land": "Slowenien"},
-        {"tCO2/Kopf": 8.9, "Land": "Daenemark"},
-        {"tCO2/Kopf": 8.8, "Land": "Slowakei"},
-        {"tCO2/Kopf": 8.6, "Land": "Irland"},
-        {"tCO2/Kopf": 8.5, "Land": "Iran"},
-        {"tCO2/Kopf": 8.2, "Land": "Neuseeland"},
-        {"tCO2/Kopf": 8.1, "Land": "Litauen"},
-        {"tCO2/Kopf": 8.1, "Land": "Großbritannien"},
-        {"tCO2/Kopf": 8.0, "Land": "Botswana"},
-        {"tCO2/Kopf": 7.9, "Land": "Polen"},
-        {"tCO2/Kopf": 7.8, "Land": "Malaysia"},
-        {"tCO2/Kopf": 7.7, "Land": "Italien"},
-        {"tCO2/Kopf": 7.1, "Land": "Schweden"},
-        {"tCO2/Kopf": 6.9, "Land": "Ungarn"},
-        {"tCO2/Kopf": 6.9, "Land": "Lettland"},
-        {"tCO2/Kopf": 6.9, "Land": "Belarus"},
-        {"tCO2/Kopf": 6.8, "Land": "Frankreich"},
-        {"tCO2/Kopf": 6.6, "Land": "Zypern"},
-        {"tCO2/Kopf": 6.3, "Land": "China"},
-        {"tCO2/Kopf": 6.2, "Land": "Spanien"},
-        {"tCO2/Kopf": 6.0, "Land": "Panama"},
-        {"tCO2/Kopf": 5.8, "Land": "Suedafrika"},
-        {"tCO2/Kopf": 5.7, "Land": "Griechenland"},
-        {"tCO2/Kopf": 5.6, "Land": "Bulgarien"},
-        {"tCO2/Kopf": 5.5, "Land": "Portugal"},
-        {"tCO2/Kopf": 5.3, "Land": "Tuerkei"},
-        {"tCO2/Kopf": 5.3, "Land": "Venezuela"},
-        {"tCO2/Kopf": 5.1, "Land": "Koratien"},
-        {"tCO2/Kopf": 5.0, "Land": "Chile"},
-        {"tCO2/Kopf": 5.0, "Land": "Ukraine"},
-        {"tCO2/Kopf": 4.7, "Land": "Mauritius"},
-        {"tCO2/Kopf": 4.2, "Land": "Argentinien"},
-        {"tCO2/Kopf": 4.1, "Land": "Thailand"},
-        {"tCO2/Kopf": 4.1, "Land": "Laos"},
-        {"tCO2/Kopf": 4.0, "Land": "Rumaenien"},
-        {"tCO2/Kopf": 4.0, "Land": "Aserbaidschan"},
-        {"tCO2/Kopf": 3.8, "Land": "Mexiko"},
-        {"tCO2/Kopf": 3.7, "Land": "Namibia"},
-        {"tCO2/Kopf": 3.4, "Land": "Jordanien"},
-        {"tCO2/Kopf": 3.3, "Land": "Uruguay"},
-        {"tCO2/Kopf": 2.9, "Land": "Jamaica"},
-        {"tCO2/Kopf": 2.9, "Land": "Ecuador"},
-        {"tCO2/Kopf": 2.8, "Land": "Georgien"},
-        {"tCO2/Kopf": 2.6, "Land": "Kirgistan"},
-        {"tCO2/Kopf": 2.6, "Land": "Costa Rica"},
-        {"tCO2/Kopf": 2.5, "Land": "Aegypten"},
-        {"tCO2/Kopf": 2.5, "Land": "Dominikanische Repubilk"},
-        {"tCO2/Kopf": 2.4, "Land": "Tunesien"},
-        {"tCO2/Kopf": 2.3, "Land": "Brasilien"},
-        {"tCO2/Kopf": 2.2, "Land": "Indonesien"},
-        {"tCO2/Kopf": 2.2, "Land": "Vietnam"},
-        {"tCO2/Kopf": 2.2, "Land": "Albanien"},
-        {"tCO2/Kopf": 2.2, "Land": "Armenien"},
-        {"tCO2/Kopf": 2.1, "Land": "Kolumbien"},
-        {"tCO2/Kopf": 2.0, "Land": "Peru"},
-        {"tCO2/Kopf": 1.9, "Land": "Bolivien"},
-        {"tCO2/Kopf": 1.9, "Land": "Marokko"},
-        {"tCO2/Kopf": 1.7, "Land": "Indien"},
-        {"tCO2/Kopf": 1.7, "Land": "Paraguay"},
-        {"tCO2/Kopf": 1.6, "Land": "Sri Lanka"},
-        {"tCO2/Kopf": 1.5, "Land": "Philippinen"},
-        {"tCO2/Kopf": 1.4, "Land": "Guatemala"},
-        {"tCO2/Kopf": 1.3, "Land": "Honduras"},
-        {"tCO2/Kopf": 1.3, "Land": "El Salvador"},
-        {"tCO2/Kopf": 1.2, "Land": "Kambodscha"},
-        {"tCO2/Kopf": 1.2, "Land": "Pakistan"}      
-]
-};
-
-const jsonData2 = {
-    "companies": [
-  {
-    "name": "Saudi Aramco",
-    "co2_ausstoß": "500"
-  },
-  {
-    "name": "Chevron",
-    "co2_ausstoß": "41"
-  },
-  {
-    "name": "ExxonMobil",
-    "co2_ausstoß": "36"
-  },
-  {
-    "name": "BP",
-    "co2_ausstoß": "34"
-  },
-  {
-    "name": "Royal Dutch Shell",
-    "co2_ausstoß": "31"
-  },
-  {
-    "name": "TotalEnergies",
-    "co2_ausstoß": "31"
-  },
-  {
-    "name": "Glencore",
-    "co2_ausstoß": "27"
-  },
-  {
-    "name": "China National Petroleum Corporation (CNPC)",
-    "co2_ausstoß": "23"
-  },
-  {
-    "name": "Gazprom",
-    "co2_ausstoß": "18"
-  },
-  {
-    "name": "ConocoPhillips",
-    "co2_ausstoß": "16"
-  },
-  {
-    "name": "BHP",
-    "co2_ausstoß": "14"
-  },
-  {
-    "name": "Valero Energy",
-    "co2_ausstoß": "13"
-  },
-  {
-    "name": "Rio Tinto",
-    "co2_ausstoß": "12"
-  },
-  {
-    "name": "ArcelorMittal",
-    "co2_ausstoß": "11"
-  },
-  {
-    "name": "Kuwait Petroleum Corporation (KPC)",
-    "co2_ausstoß": "10"
-  },
-  {
-    "name": "PetroChina",
-    "co2_ausstoß": "10"
-  },
-  {
-    "name": "Vale",
-    "co2_ausstoß": "9"
-  },
-  {
-    "name": "Peabody Energy",
-    "co2_ausstoß": "8"
-  },
-  {
-    "name": "Exxaro Resources",
-    "co2_ausstoß": "7"
-  },
-  {
-    "name": "Consol Energy",
-    "co2_ausstoß": "6"
-  }
-]
-};
-
-
-
-</script>   
-
-<!--Test-->
 </html>

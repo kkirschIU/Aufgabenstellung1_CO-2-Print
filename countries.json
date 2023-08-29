@@ -1,5 +1,5 @@
 {
-    "Länderdaten": [
+    "countries": [
       {"tCO2/Kopf": 38.2, "Land": "Luxemburg"},
       {"tCO2/Kopf": 25.4, "Land": "Katar"},
       {"tCO2/Kopf": 23.2, "Land": "UAE"},
@@ -94,7 +94,7 @@
       {"tCO2/Kopf": 1.3, "Land": "Honduras"},
       {"tCO2/Kopf": 1.3, "Land": "El Salvador"},
       {"tCO2/Kopf": 1.2, "Land": "Kambodscha"},
-      {"tCO2/Kopf": 1.2, "Land": "Pakistan"}      
+      {"tCO2/Kopf": 1.2, "Land": "Pakistan"} 
     ]
   }
   
