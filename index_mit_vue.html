@@ -8,6 +8,9 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2/dist/css/bootstrap.min.css">
 
+  <!-- Einbindung von Vue.js als JavaScript Framework -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
   <style>
     /* Stile für die Containerplatzierung bei rtl-Sprachen */
     .container-wrapper {
@@ -32,6 +35,8 @@
 </head>
 
 <body>
+
+  <!--<script src="app.js"></script>-->
 
 <div class="container border">
 
@@ -60,7 +65,7 @@
 <main>
 
 <div class="container-wrapper my-4">
-  <div class="container-nav border">
+  <div class="container-nav border" id="app" :class="{rtl: isRtlLanguage, ltr: !isRtlLanguage }">
     <nav class="d-flex flex-shrink-0 p-2 sticky-top" style="width: 180px">
         <ul class="nav mb-auto">
         <li><a href="#about-section">Über uns</a></li>
@@ -196,28 +201,6 @@
   </div>
 </div>
 
-
-<script>
-  function setContainerOrder() {
-    var lang = window.navigator.language || window.navigator.userLanguage;
-    var isRtlLanguage = ["ar", "he", "fa", "ur"].includes(lang.substr(0, 2));
-    
-    // Ausgabe des erkannten Werts der Browsersprache in der Konsole
-    console.log("Erkannte Browsersprache:", lang);
-
-    // CSS-Klasse basierend auf der Sprache hinzufügen
-    var containerWrapper = document.querySelector('.container-wrapper');
-    if (isRtlLanguage) {
-      containerWrapper.classList.remove('ltr'); // Entferne die Klasse für ltr-Sprachen
-      containerWrapper.classList.add('rtl');    // Füge die Klasse für rtl-Sprachen hinzu
-    } else {
-      containerWrapper.classList.remove('rtl'); // Entferne die Klasse für rtl-Sprachen
-      containerWrapper.classList.add('ltr');    // Füge die Klasse für ltr-Sprachen hinzu
-    }
-  }
-
-  setContainerOrder();
-</script>
 
 </main>
 </div>
@@ -425,178 +408,6 @@ const jsonData2 = {
 };
 
 
-// Funktion zum Anzeigen der Laender-Emissions JSON-Daten in HTML
-function anzeigenDatenCountries() {
-    const tableBody = document.getElementById('country-data');
-
-    jsonData.countries.forEach(country => {
-      const row = document.createElement('tr');
-      const landCell = document.createElement('td');
-      const tco2Cell = document.createElement('td');
-
-      landCell.textContent = country.Land;
-      tco2Cell.textContent = country['tCO2/Kopf'];
-
-      row.appendChild(landCell);
-      row.appendChild(tco2Cell);
-
-      tableBody.appendChild(row);
-    });
-  }
-
-// Funktion zum Anzeigen der Unternehmens-Emissions JSON-Daten in HTML
-function anzeigenDatenCompanies() {
-     const tableBody = document.getElementById('company-data');
-
-    jsonData2.companies.forEach(companies => {
-      const row = document.createElement('tr');
-      const nameCell = document.createElement('td');
-      const co2_ausstoßCell = document.createElement('td');
-
-      nameCell.textContent = companies.name;
-      co2_ausstoßCell.textContent = companies['co2_ausstoß'];
-
-      row.appendChild(nameCell);
-      row.appendChild(co2_ausstoßCell);
-
-      tableBody.appendChild(row);
-    });
-  }
-
-  // Die Funktion zum Sortieren der Laendertabelle: Alphabetisch, Aufsteigend, Absteigend
-  function sortTable() {
-    const table = document.getElementById('country-table');
-    const rows = table.getElementsByTagName('tr');
-    const sortOption = document.getElementById('sortOption').value;
-
-    if (sortOption === 'alphabetical') {
-      const sortedRows = Array.from(rows).slice(1).sort((a, b) => {
-        const cellA = a.getElementsByTagName('td')[0].textContent.toLowerCase();
-        const cellB = b.getElementsByTagName('td')[0].textContent.toLowerCase();
-        return cellA.localeCompare(cellB);
-      });
-
-      for (let i = 0; i < sortedRows.length; i++) {
-        table.appendChild(sortedRows[i]);
-      }
-    } else if (sortOption === 'emissions_asc') {
-        const sortedRows = Array.from(rows).slice(1).sort((a, b) => {
-        const cellA = parseFloat(a.getElementsByTagName('td')[1].textContent);
-        const cellB = parseFloat(b.getElementsByTagName('td')[1].textContent);
-        return cellA - cellB;
-      });
-
-      for (let i = 0; i < sortedRows.length; i++) {
-        table.appendChild(sortedRows[i]);
-      };  
-
-    } else if (sortOption === 'emissions_desc') {
-        const sortedRows = Array.from(rows).slice(1).sort((a, b) => {
-        const cellA = parseFloat(a.getElementsByTagName('td')[1].textContent);
-        const cellB = parseFloat(b.getElementsByTagName('td')[1].textContent);
-        return cellB - cellA; // Reihenfolge umgekehrt, um absteigende Sortierung zu erhalten
-      });
-
-      for (let i = 0; i < sortedRows.length; i++) {
-      table.appendChild(sortedRows[i]);
-        };
-    }
-  }
-
-  // Die Funktion zum Sortieren der Unternehmenstabelle: Alphabetisch, Aufsteigend, Absteigend
-  function sortTableCompany() {
-    const table = document.getElementById('company-table');
-    const rows = table.getElementsByTagName('tr');
-    const sortOption = document.getElementById('sortOptionComp').value;
-
-    if (sortOption === 'alphabetical') {
-      const sortedRows = Array.from(rows).slice(1).sort((a, b) => {
-        const cellA = a.getElementsByTagName('td')[0].textContent.toLowerCase();
-        const cellB = b.getElementsByTagName('td')[0].textContent.toLowerCase();
-        return cellA.localeCompare(cellB);
-      });
-
-      for (let i = 0; i < sortedRows.length; i++) {
-        table.appendChild(sortedRows[i]);
-      }
-    } else if (sortOption === 'emissions_asc') {
-        const sortedRows = Array.from(rows).slice(1).sort((a, b) => {
-        const cellA = parseFloat(a.getElementsByTagName('td')[1].textContent);
-        const cellB = parseFloat(b.getElementsByTagName('td')[1].textContent);
-        return cellA - cellB;
-      });
-
-      for (let i = 0; i < sortedRows.length; i++) {
-        table.appendChild(sortedRows[i]);
-      };  
-
-    } else if (sortOption === 'emissions_desc') {
-        const sortedRows = Array.from(rows).slice(1).sort((a, b) => {
-        const cellA = parseFloat(a.getElementsByTagName('td')[1].textContent);
-        const cellB = parseFloat(b.getElementsByTagName('td')[1].textContent);
-        return cellB - cellA; // Reihenfolge umgekehrt, um absteigende Sortierung zu erhalten
-      });
-
-      for (let i = 0; i < sortedRows.length; i++) {
-      table.appendChild(sortedRows[i]);
-        };
-    }
-  }
-
-    // Funktion zum Filtern der Laender nach Namen (Suchfeld)
-    function filterByCountry(searchTerm) {
-      const table = document.getElementById('country-table');
-      const rows = table.getElementsByTagName('tr');
-
-      for (let i = 1; i < rows.length; i++) {
-        const row = rows[i];
-        const countryName = row.getElementsByTagName('td')[0].textContent.toLowerCase();  //textContent verhindert Code-Injection
-
-        if (countryName.includes(searchTerm.toLowerCase())) {
-          row.style.display = '';
-        } else {
-          row.style.display = 'none';
-        }
-      }
-    }
-
-    // Funktion zum Filtern der Unternehmen nach Namen (Suchfeld)
-    function filterByCompany(searchTerm) {
-      const table = document.getElementById('company-table');
-      const rows = table.getElementsByTagName('tr');
-
-      for (let i = 1; i < rows.length; i++) {
-        const row = rows[i];
-        const companyName = row.getElementsByTagName('td')[0].textContent.toLowerCase();  //textContent verhindert Code-Injection
-
-        if (companyName.includes(searchTerm.toLowerCase())) {
-          row.style.display = '';
-        } else {
-          row.style.display = 'none';
-        }
-      }
-    }
-
-    // Event-Handler soll neuladen der Seite bei druecken der Return Taste in der Laendersuche verhindern
-      document.getElementById('search-country').addEventListener('keypress', function (event) {
-        if (event.key === 'Enter') {
-          event.preventDefault(); // Verhindert das Neuladen der Seite
-          this.blur(); // Suchfeld verliert Fokus
-        }
-      });
-
-      // Event-Handler soll neuladen der Seite bei druecken der Return Taste in der Laendersuche verhindern
-      document.getElementById('search-company').addEventListener('keypress', function (event) {
-        if (event.key === 'Enter') {
-          event.preventDefault(); // Verhindert das Neuladen der Seite
-          this.blur(); // Suchfeld verliert Fokus
-        }
-      });
-
-  window.onload = function() {
-    anzeigenDatenCountries();
-    anzeigenDatenCompanies();
-  };
 
 </script>   
 
