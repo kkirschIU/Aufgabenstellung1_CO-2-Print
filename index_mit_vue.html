@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Global Carbon Insights e.V.</title>
+  <title>Global Carbon Insights e.V. orig</title>
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2/dist/css/bootstrap.min.css">
 
@@ -12,12 +12,12 @@
     /* Stile für die Containerplatzierung bei rtl-Sprachen */
     .container-wrapper {
       display: flex;
-      flex-direction: row-reverse;
     }
 
     /* Stile für die Containerplatzierung bei ltr-Sprachen */
-    .container-wrapper.ltr {
-      flex-direction: row;
+    .container-wrapper.rtl {
+      display: flex;
+      flex-direction: row-reverse;
     }
 
     .container-nav {
@@ -53,14 +53,14 @@
             <img src="Logo1.jpg" alt="Logo" class="img-fluid">
         </div>
         <div class="col-sm-8">
-            <h1>Global Carbon Insights e.V. (mit vue)</h1>
+            <h1>Global Carbon Insights e.V.</h1>
             <h2>Unsere Mission sind Transparenz und Aufklärung!</h2>
         </div>
     </header>
 
 <main>
 
-  <div class="container-wrapper my-4" id="rtl" :class="{ rtl: isRtlLanguage, ltr: !isRtlLanguage }">
+  <div class="container-wrapper my-4" id="app" :class="{ rtl: isRtlLanguage, ltr: !isRtlLanguage }"> <!--id="rtl" :class="{ rtl: isRtlLanguage, ltr: !isRtlLanguage }"--> 
   <div class="container-nav border">
     <nav class="d-flex flex-shrink-0 p-2 sticky-top" style="width: 180px">
         <ul class="nav mb-auto">
@@ -125,7 +125,7 @@
           <div class="col-md-6">
           <!--Drop-Down Menü zum Filtern der Länder nach Alphabet, nach CO2 Ausstoß aufsteigend oder absteigend-->
           <form class="form-inline">
-            <select id="sortOption" class="form-select" v-model="sortOption">
+            <select id="sortOption" class="form-select" v-model="sortOptionCountry">
               <option value="default">Sortieren nach:</option>
               <option value="alphabetical">Land (alphabetisch)</option>
               <option value="emissions_asc">CO²-Emissionen (aufsteigend)</option>
@@ -168,7 +168,7 @@
   
         <div class="col-md-6">
           <!-- Dropdown-Menü zum Filtern der Unternehmen -->
-          <select id="sortOptionComp" class="form-select" v-model="sortOption">
+          <select id="sortOptionComp" class="form-select" v-model="sortOptionCompany">
             <option value="default">Sortieren nach:</option>
             <option value="alphabetical">Unternehmen (alphabetisch)</option>
             <option value="emissions_asc">CO²-Emissionen (aufsteigend)</option>
