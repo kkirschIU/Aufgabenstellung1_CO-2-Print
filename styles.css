@@ -1,0 +1,94 @@
+    /*Media Query für Standardfall - Monitore > 991px*/
+    @media (min-width: 992px) {
+        /* Stile für die Containerplatzierung bei ltr-Sprachen */
+        .container-wrapper {
+          display: flex;
+        }
+        
+        /* Stile für die Containerplatzierung bei rtl-Sprachen */
+        .container-wrapper.rtl {
+          display: flex;
+          flex-direction: row-reverse;
+        }
+
+        .container-nav {
+          flex: 0 0 20%;
+        }
+
+        .container-content {
+          flex: 1;
+        }
+      }
+    
+        /*Media Query für Standardfall - Monitore > 768px und < 991px und landscape Ausrichtung des Endgeräts*/
+        @media (min-width: 768px) and (max-width: 991px) and (orientation: landscape) {
+          /* Stile für die Containerplatzierung bei ltr-Sprachen */
+          .container-wrapper {
+              display: flex;
+            }
+          /* Stile für die Containerplatzierung bei rtl-Sprachen */
+          .container-wrapper.rtl {
+              display: flex;
+              flex-direction: row-reverse;
+            }
+
+          .container-nav {
+            flex: 0 0 20%;
+          }
+
+          .container-content {
+            flex: 1;
+          }
+        }
+    
+
+      /* Smartphone oder Tablet im Portrait-Modus */
+        @media (max-width: 767px) and (orientation: portrait) {
+          /* Anpassungen für die mobile Ansicht */
+          .container-nav {
+            order: 1; /* Ändert die Reihenfolge der Anzeige */
+            width: 100%; /* Volle Breite */
+          }
+
+          .container-content {
+            order: 2; /* Ändert die Reihenfolge der Anzeige */
+            margin-top: 20px; /* Abstand zwischen Navigation und Inhalt */
+          }
+
+          .col-sm-3 {
+            display: block; /* Ändert die Anzeige des Logos */
+            text-align: center; /* Zentriert das Logo */
+          }
+        }
+
+        /*Styles für Kontaktformular*/
+        body {
+            font-family: Arial, sans-serif;
+          }
+          .contact-form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+          }
+          .contact-form label {
+            display: block;
+            margin-bottom: 10px;
+          }
+          .contact-form input[type="text"],
+          .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+          }
+          .contact-form button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+          }
