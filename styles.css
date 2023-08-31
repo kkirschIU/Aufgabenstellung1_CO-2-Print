@@ -92,3 +92,19 @@
             border-radius: 3px;
             cursor: pointer;
           }
+
+        /*Definition des Farbdesings der Hintergründe*/
+        .container-nav {
+          background-color: #bababa;
+        }
+        #about-section{
+          background-color: #efefef;
+        }
+        #companies_CO2{
+          background-color: #efefef;
+        }
+
+        /* Globales CSS für Links */
+        a {
+          color: black; /* Schriftfarbe für Links */
+        }

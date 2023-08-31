@@ -13,12 +13,12 @@
 
 </head>
 
-<body>
+<body class="bg-dark">
 
 
 <div class="container border">
 
-    <header class="row align-items-center border-bottom">
+    <header class="row align-items-center border-bottom  bg-light">
         <!--Globale Navigation-->
         <nav class="d-flex justify-content-end py-3 my-4 border-top">
             <ul class="nav">
@@ -43,7 +43,7 @@
 <main>
 
   <div class="container-wrapper my-4" id="app" :class="{ rtl: isRtlLanguage, ltr: !isRtlLanguage }"> <!--id="rtl" :class="{ rtl: isRtlLanguage, ltr: !isRtlLanguage }"--> 
-  <div class="container-nav border">
+  <div class="container-nav bg-light">
     <nav class="d-flex flex-shrink-0 p-2 sticky-top" style="width: 180px">
         <ul class="nav mb-auto">
         <li><a href="#about-section">Über uns</a></li>
@@ -53,8 +53,8 @@
     </nav>
   </div>
   
-  <div class="container-content">
-    <section id="about-section" class="list-group-item border mb-4">
+  <div class="container-content bg-light">
+    <section id="about-section" class="list-group-item mb-4">
         <h1>Über uns - Global Carbon Insights</h1>
         <p>
           Herzlich willkommen bei Global Carbon Insights! Wir sind ein engagiertes Non-Profit-Unternehmen, das sich leidenschaftlich dem Kampf gegen den Klimawandel verschrieben hat. Unsere Mission ist es, das Bewusstsein für die drängenden Herausforderungen des Klimawandels zu schärfen und die Öffentlichkeit über die CO2-Emissionen von Ländern und Unternehmen weltweit aufzuklären.
@@ -86,7 +86,7 @@
         <h1>Gemeinsam für den Planeten. Gemeinsam für eine nachhaltige Zukunft.</h1>
     </section>
 
-    <section id="countries_CO2" class="list-group-item border my-4">
+    <section id="countries_CO2" class="list-group-item my-4">
       <h1>CO<sub>2</sub>-Fußabdruck der Länder</h1>
               <p>
               Im Bereich "Footprint der Länder" finden Sie eine Auflistung der Länder, deren messbarer Footprint größer als 1 ist. Hierbei werden die relativen Zahlen gemessen am CO<sub>2</sub>-Ausstoß pro Kopf betrachtet, anstatt absolute Zahlen pro Land zu verwenden. Dieser Ansatz kann zu abweichenden Ergebnissen im Vergleich zu anderen Webseiten und Projekten führen, die ausschließlich absolute Zahlen berücksichtigen.
@@ -136,7 +136,7 @@
             </div>
     </section>
   
-    <section id="companies_CO2"  class="list-group-item border my-4">
+    <section id="companies_CO2"  class="list-group-item my-4">
       <h1>CO<sub>2</sub>-Fooprint der Unternehmen</h1>
       <p>
         Im Bereich "CO<sub>2</sub> Footprint der Unternehmen" ist es wichtig zu beachten, dass es keine zusammengefassten Daten wie für Länder gibt. Dies liegt hauptsächlich daran, dass die CO<sub>2</sub>-Berechnung in der Verantwortung der Unternehmen selbst liegt und häufig nur auf der Grundlage von unternehmensinternen Informationen möglich ist. Die Offenlegung von CO2-Emissionen durch Unternehmen kann variieren und hängt oft von der Transparenz und Nachhaltigkeitsstrategie jedes einzelnen Unternehmens ab. Einige Unternehmen veröffentlichen umfassende Berichte über ihre Emissionen und Nachhaltigkeitsbemühungen, während andere möglicherweise weniger transparent sind. Dennoch bemüht sich Global Carbon Insights, soweit wie möglich relevante und verlässliche Informationen zu den CO2-Emissionen von Unternehmen bereitzustellen, um einen Beitrag zur Sensibilisierung und Transparenz in Bezug auf den Unternehmensbeitrag zum Klimawandel zu leisten. Die Liste der Unternehmen wird dabei stetig erweitert.
@@ -179,15 +179,13 @@
     </div>
   </div>
 
-
-
 </main>
 
 <!-- Einbindung von Vue.js als JavaScript Framework -->
 <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 <script src="app.js"></script>
 
-<footer class="d-flex justify-content-end py-3 my-4 border-top">
+<footer class="d-flex justify-content-end py-3 my-4 border-top bg-light">
   <nav>
       <ul class="nav">
         <li class="nav-item me-2"><a 
