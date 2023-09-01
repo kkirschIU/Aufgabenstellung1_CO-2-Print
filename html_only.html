@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Global Carbon Insights e.V.</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2/dist/css/bootstrap.min.css">
+
+  <!--zusaetliche Stylesheets fuer Sprachkultur-Anpassung und Media Queries-->
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+
+
+<div>
+
+    <header>
+        <!--Globale Navigation-->
+        <nav>
+            <ul>
+            <li><a
+                    href="https://www.twitter.com/globalcarboninsights">Twitter</a></li>
+            <li><a
+                    href="https://www.instagram.com/globalcarboninsights">Instagram</a></li>
+            <li><a
+                    href="https://www.facebook.com/globalcarboninsights">Facebook</a></li>
+            </ul>
+        </nav>
+
+        <!--Logo und Überschrift der Webseite-->
+        <div>
+            <img src="Logo1.jpg" alt="Logo">
+        </div>
+        <div>
+            <h1>Global Carbon Insights e.V.</h1>
+            <h2>Unsere Mission sind Transparenz und Aufklärung!</h2>
+        </div>
+    </header>
+
+<main>
+
+  <!--Container-Wrapper für Anordnung der internen Navigation links und Content rechts-->
+  <div id="app" :class="{ rtl: isRtlLanguage, ltr: !isRtlLanguage }">
+
+    <!--Container mit interner Navigation zwischen Sektionen-->
+    <div>
+      <nav>
+          <ul>
+          <li><a href="#about-section">Über uns</a></li>
+          <li><a href="#countries_CO2">CO<sub>2</sub> der Länder</a></li>
+          <li><a href="#companies_CO2">CO<sub>2</sub> der Unternehmen</a></li>
+          </ul>
+      </nav>
+    </div>
+  
+    <!--Container für Sektionen mit Content-->
+    <div>
+      
+      <!--Sektion 1 - Über uns-->
+      <section id="about-section">
+          <h1>Über uns - Global Carbon Insights</h1>
+          <p>
+            Herzlich willkommen bei Global Carbon Insights! Wir sind ein engagiertes Non-Profit-Unternehmen, das sich leidenschaftlich dem Kampf gegen den Klimawandel verschrieben hat. Unsere Mission ist es, das Bewusstsein für die drängenden Herausforderungen des Klimawandels zu schärfen und die Öffentlichkeit über die CO2-Emissionen von Ländern und Unternehmen weltweit aufzuklären.
+          </p>
+        
+          <h2>Unsere Geschichte</h2>
+          <p>
+            Global Carbon Insights wurde ursprünglich von einer Gruppe von begeisterten Umweltschützern und Forschern ins Leben gerufen, die eine gemeinsame Vision teilten: Eine Welt zu schaffen, in der alle Menschen über die Auswirkungen ihrer Handlungen auf den Planeten informiert sind. Unsere Gründer waren zutiefst besorgt über die zunehmenden Naturkatastrophen und Extremwetterereignisse, die durch den Klimawandel verursacht wurden, und sie erkannten die dringende Notwendigkeit, Maßnahmen zu ergreifen.
+          </p>
+        
+          <h2>Unsere Motivation</h2>
+          <p>
+            Unsere Motivation entstammt der Überzeugung, dass Wissen und Transparenz der Schlüssel zur Veränderung sind. Indem wir verlässliche Daten über die CO<sub>2</sub>-Emissionen von Ländern und Unternehmen zugänglich machen, ermöglichen wir es der Weltgemeinschaft, informierte Entscheidungen zu treffen und gezielte Schritte zur Reduzierung ihres ökologischen Fußabdrucks zu unternehmen.
+          </p>
+          <p>
+            Der Klimawandel hat bereits dramatische Auswirkungen auf unseren Planeten, von schmelzenden Gletschern bis hin zu verheerenden Naturkatastrophen wie Stürmen, Dürren und Überschwemmungen. Wir sehen die Verbindung zwischen dem Klimawandel und diesen Naturkatastrophen als Weckruf für dringende Maßnahmen. Durch Aufklärung und Sensibilisierung möchten wir die Menschen dazu inspirieren, gemeinsam für eine nachhaltige Zukunft einzutreten.
+          </p>
+        
+          <h2>Unser Ziel</h2>
+          <p>
+            Unser Ziel ist es, jedem Bürger einen klaren Überblick über die CO<sub>2</sub>-Emissionen von Ländern und Unternehmen zu geben, damit sie die Auswirkungen auf unser Klima besser verstehen können. Wir glauben, dass Wissen die Grundlage für kollektive Veränderung ist. Indem wir aufklären und informieren, hoffen wir, dass Menschen und Regierungen auf der ganzen Welt Maßnahmen ergreifen, um den Klimawandel zu bekämpfen und eine lebenswerte Umwelt für zukünftige Generationen zu bewahren.
+          </p>
+          <p>
+            Wir sind fest davon überzeugt, dass jeder Einzelne einen wertvollen Beitrag zum Klimaschutz leisten kann. Gemeinsam können wir den Klimawandel bekämpfen und eine nachhaltige, blühende Zukunft für unseren wunderbaren Planeten gestalten.
+          </p>
+        
+          <h2>Vielen Dank, dass Sie uns auf dieser wichtigen Reise begleiten!</h2>
+          <p></p>
+          <h1>Gemeinsam für den Planeten. Gemeinsam für eine nachhaltige Zukunft.</h1>
+      </section>
+
+      <!--Sektion 2 - Emissionen der Länder-->
+      <section id="countries_CO2">
+        <h1>CO<sub>2</sub>-Fußabdruck der Länder</h1>
+                <p>
+                Im Bereich "Footprint der Länder" finden Sie eine Auflistung der Länder, deren messbarer Footprint größer als 1 ist. Hierbei werden die relativen Zahlen gemessen am CO<sub>2</sub>-Ausstoß pro Kopf betrachtet, anstatt absolute Zahlen pro Land zu verwenden. Dieser Ansatz kann zu abweichenden Ergebnissen im Vergleich zu anderen Webseiten und Projekten führen, die ausschließlich absolute Zahlen berücksichtigen.
+            </p>
+            <p>
+                Nehmen wir beispielsweise China und Deutschland: Obwohl China insgesamt einen höheren absoluten CO<sub>2</sub>-Ausstoß aufweisen könnte, ist der pro Kopf-Ausstoß geringer als in Deutschland. Dies liegt daran, dass viele Unternehmen aus Europa und den USA in China produzieren und damit vor Ort zusätzliche Emissionen verursachen. Um ein realistischeres Bild zu erhalten, müssen diese Emissionen auch auf die Empfängerländer in Europa und den USA verteilt werden.
+            </p>
+            <p>  
+                Durch die Fokussierung auf den relativen CO<sub>2</sub>-Ausstoß pro Kopf möchten wir eine differenzierte Betrachtung ermöglichen und verdeutlichen, dass der Einfluss von Produktions- und Konsummustern über Ländergrenzen hinweg betrachtet werden sollte. Dieser Ansatz ermöglicht es uns, die globalen Zusammenhänge besser zu verstehen und die Verantwortung jedes Landes für den individuellen Beitrag zum Klimawandel genauer zu bewerten.
+            </p>
+    
+          <!--Container mit Suchfeld und Drop-Down zum Filtern der Tabelle mit Emissionsdaten-->
+          <div>
+              <div>
+              <!--Suchfeld zum Filtern nach einzelnen Ländern-->
+                <input type="text" class="form-control" v-model="countrySearchTerm" name="suche" id="search-country" placeholder="Suche nach Land">
+              </div>
+      
+                  <div>
+                  <!--Drop-Down Menü zum Filtern der Länder - alphabetisch, Aufsteigend nach CO₂, Absteigend nach CO₂--->
+                  <form>
+                    <select id="sortOption" class="form-select" v-model="sortOptionCountry">
+                      <option value="default">Sortieren nach:</option>
+                      <option value="alphabetical">Land (alphabetisch)</option>
+                      <option value="emissions_asc">CO₂-Emissionen (aufsteigend)</option>
+                      <option value="emissions_desc">CO₂-Emissionen (absteigend)</option>
+                  </select>
+                  </form>
+                  </div>
+                </div>
+
+                    <!--Darstellung der Tabelle gefüllt mit json Daten via JavaScript bzw. Vue Funktion >> app.js-->
+                    <div>
+                      <table id="country-table">
+                        <thead>
+                          <tr>
+                            <th>Land</th>
+                            <th>tCO<sub>2</sub>/Kopf</th>
+                          </tr>
+                        </thead>
+                        <tbody id="country-data">
+                          <!-- Hier werden die JSON-Daten mit vue.js angezeigt -->
+                          <tr v-for="country in filteredCountries" :key="country.Land">
+                            <td>{{ country.Land }}</td>
+                            <td>{{ country['tCO2/Kopf'] }}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+        </section>
+        
+        <!--Sektion 3 - Emissionen der Unternehmen-->
+        <section id="companies_CO2">
+          <h1>CO<sub>2</sub>-Fooprint der Unternehmen</h1>
+          <p>
+            Im Bereich "CO<sub>2</sub> Footprint der Unternehmen" ist es wichtig zu beachten, dass es keine zusammengefassten Daten wie für Länder gibt. Dies liegt hauptsächlich daran, dass die CO<sub>2</sub>-Berechnung in der Verantwortung der Unternehmen selbst liegt und häufig nur auf der Grundlage von unternehmensinternen Informationen möglich ist. Die Offenlegung von CO2-Emissionen durch Unternehmen kann variieren und hängt oft von der Transparenz und Nachhaltigkeitsstrategie jedes einzelnen Unternehmens ab. Einige Unternehmen veröffentlichen umfassende Berichte über ihre Emissionen und Nachhaltigkeitsbemühungen, während andere möglicherweise weniger transparent sind. Dennoch bemüht sich Global Carbon Insights, soweit wie möglich relevante und verlässliche Informationen zu den CO2-Emissionen von Unternehmen bereitzustellen, um einen Beitrag zur Sensibilisierung und Transparenz in Bezug auf den Unternehmensbeitrag zum Klimawandel zu leisten. Die Liste der Unternehmen wird dabei stetig erweitert.
+          </p>
+      
+            <!--Container mit Suchfeld und Drop-Down zum Filtern der Tabelle mit Emissionsdaten-->
+            <div>
+              <div>
+                <!-- Suchfeld zum Filtern nach einzelnen Unternehmen -->
+                <input type="text" class="form-control" v-model="companySearchTerm" placeholder="Suche nach Unternehmen">
+              </div>
+      
+                <div>
+                  <!-- Dropdown-Menü zum Filtern der Unternehmen - alphabetisch, Aufsteigend nach CO₂, Absteigend nach CO₂--->
+                  <select id="sortOptionComp" class="form-select" v-model="sortOptionCompany">
+                    <option value="default">Sortieren nach:</option>
+                    <option value="alphabetical">Unternehmen (alphabetisch)</option>
+                    <option value="emissions_asc">CO₂-Emissionen (aufsteigend)</option>
+                    <option value="emissions_desc">CO₂-Emissionen (absteigend)</option>
+                  </select>
+                </div>
+              </div>
+
+                  <!--Darstellung der Tabelle gefüllt mit json Daten via JavaScript bzw. Vue Funktion >> app.js-->
+                  <div>
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Unternehmen</th>
+                          <th>CO<sub>2</sub> Ausstoß in Tonnen</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr v-for="company in filteredCompanies" :key="company.name">
+                          <td>{{ company.name }}</td>
+                          <td>{{ company.co2_ausstoß }}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+        </section>
+      </div>
+  </div>
+
+</main>
+
+<!-- Einbindung von Vue.js als JavaScript Framework -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script src="app.js"></script>
+
+
+<!--Footer Bereich-->
+  <footer>
+    <nav>
+        <ul>
+          <li><a 
+                href="contact.html">Kontakt</a></li>
+          <li><a 
+                href="imprint.html">Impressum</a></li>
+          <li><a 
+                href="datenschutz.html">Datenschutz</a></li>
+        </ul>
+      </nav>
+  </footer>
+
+<!--Schließender Div Tag für div class="container"-->  
+</div>
+
+</body>
+</html>
