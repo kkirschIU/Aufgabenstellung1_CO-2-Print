@@ -20,7 +20,7 @@ new Vue({
   },
   methods: {
     fetchCountryData() {
-      // Fetch and populate countries data
+      // Ländertabelle mit Daten aus countries.json befüllen
       fetch('countries.json')
       .then(response => response.json())
       .then(data => {
@@ -32,7 +32,7 @@ new Vue({
       });
     },
     fetchCompanyData() {
-      // Fetch and populate companies data
+      // Unternehmenstabelle mit Daten aus companies.json befüllen
       fetch('companies.json')
       .then(response => response.json())
       .then(data => {
@@ -44,17 +44,17 @@ new Vue({
       });
     },
     detectRtlLanguage() {
-      // Detect RTL language
+      // Spracheinstellung ermitteln
       const lang = window.navigator.language || window.navigator.userLanguage;
       this.isRtlLanguage = ["ar", "he", "fa", "ur"].includes(lang.substr(0, 2));
     },
     filterCountries() {
-      // Filtering countries
+      // Filter nach Ländern
       const searchTerm = this.countrySearchTerm.toLowerCase();
       this.filteredCountries = this.countries.filter(country => country.Land.toLowerCase().includes(searchTerm));
     },
     sortTableCountry() {
-      // Sorting countries table
+      // Sortierfunktionen für Ländertabelle
       const rows = this.filteredCountries.slice(0); // Kopie der gefilterten Länder
 
       if (this.sortOptionCountry === 'alphabetical') {
@@ -68,12 +68,12 @@ new Vue({
       this.filteredCountries = rows;
     },
     filterCompanies() {
-      // Filtering companies
+      // Filter nach Unternehmen
       const searchTerm = this.companySearchTerm.toLowerCase();
       this.filteredCompanies = this.companies.filter(company => company.name.toLowerCase().includes(searchTerm));
     },
     sortTableCompany() {
-      // Sorting companies table
+      // Sortierfunktionen für Unternehmenstabelle
       const rows = this.filteredCompanies.slice(0); // Kopie der gefilterten Unternehmen
   
       if (this.sortOptionCompany === 'alphabetical') {
@@ -88,7 +88,7 @@ new Vue({
     }
   },
   watch: {
-    // Watchers for countrySearchTerm, sortOptionCountry, companySearchTerm, and sortOptionCompany
+    // Watchers für die Funktionen countrySearchTerm, sortOptionCountry, companySearchTerm und sortOptionCompany
     countrySearchTerm() {
       this.filterCountries();
     },
