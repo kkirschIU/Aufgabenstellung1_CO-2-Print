@@ -41,6 +41,26 @@
     }
   }
 
+  /*Media Query für Standardfall - Monitore > 768px und < 991px und portrait Ausrichtung des Endgeräts*/
+  @media (min-width: 768px) and (max-width: 991px) and (orientation: portrait) {
+    /* Stile für die Containerplatzierung bei ltr-Sprachen */
+    .container-wrapper {
+        display: flex;
+      }
+    /* Stile für die Containerplatzierung bei rtl-Sprachen */
+    .container-wrapper.rtl {
+        display: flex;
+        flex-direction: row-reverse;
+      }
+
+    .container-nav {
+      flex: 0 0 20%;
+    }
+
+    .container-content {
+      flex: 1;
+    }
+  }
 
   /* Smartphone oder Tablet im Portrait-Modus */
   @media (max-width: 767px) and (orientation: portrait) {
