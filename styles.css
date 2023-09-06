@@ -1,4 +1,4 @@
-  /*Media Query für Standardfall - Monitore > 991px*/
+  /*Media Query für Standardfall - Monitore > 992px*/
   @media (min-width: 992px) {
     /* Stile für die Containerplatzierung bei ltr-Sprachen */
     .container-wrapper {
